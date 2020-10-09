@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html  >
+<head>
+  <!-- Site made with Mobirise Website Builder v5.1.4, https://mobirise.com -->
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="generator" content="Mobirise v5.1.4, mobirise.com">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+  <link rel="shortcut icon" href="../../assets/images/logo5.png" type="image/x-icon">
+  <meta name="description" content="">
+  
+  
+  <title>수도권 지하철 환승 시간표</title>
+  <link rel="stylesheet" href="../../assets/tether/tether.min.css">
+  <link rel="stylesheet" href="../../assets/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../../assets/bootstrap/css/bootstrap-grid.min.css">
+  <link rel="stylesheet" href="../../assets/bootstrap/css/bootstrap-reboot.min.css">
+  <link rel="stylesheet" href="../../assets/formstyler/jquery.formstyler.css">
+  <link rel="stylesheet" href="../../assets/formstyler/jquery.formstyler.theme.css">
+  <link rel="stylesheet" href="../../assets/datepicker/jquery.datetimepicker.min.css">
+  <link rel="stylesheet" href="../../assets/theme/css/style.css">
+  <link rel="preload" as="style" href="../../assets/mobirise/css/mbr-additional.css"><link rel="stylesheet" href="../../assets/mobirise/css/mbr-additional.css" type="text/css">
+  
+  <script>
+  function _submit()
+  {
+    var arrival = document.getElementById('arrival').value;
+    var transfer = document.getElementById('transfer').value
+    if (arrival.substr(0,2) === transfer.substr(0,2)) {
+      alert('서로 다른 노선이어야 합니다.');
+      return;
+    }
+    
+    window.location.href = "imae-weekday-" + arrival + "-" + transfer + ".html";
+  }
+  </script>
+  
+  
+</head>
+<body>
+  
+  <section class="form6 cid-scNE09oCmo" id="form6-x">
+    
+    
+    <div class="container">
+        <div class="mbr-section-head">
+            <h3 class="mbr-section-title mbr-fonts-style align-center mb-0 display-2"><strong>어떤 시간표를 확인할까요?</strong></h3>
+            
+        </div>
+        <div class="row justify-content-center mt-4">
+            <div class="col-lg-8 mx-auto mbr-form">
+                <form action="https://mobirise.eu/" method="POST" data-rcpha_sitekey="" data-rcpha_secretkey="" class="mbr-form form-with-styler mx-auto">
+                    <div class="">
+                        
+                        <div hidden="hidden" data-form-alert-danger="" class="alert alert-danger col-12">Oops...! some
+                            problem!</div>
+                    </div>
+                    <div class="dragArea row">
+                        <div class="col-lg-12 col-md-12 col-sm-12 form-group" data-for="arrival">
+                            <h5 class="align-center mb-3">타고 온 열차</h5>
+                            <select name="arrival" data-form-field="arrival" class="form-control input-group" id="arrival">
+                                <option value="sbu" selected>수인분당선 왕십리 방면 열차</option>
+                                <option value="sbd">수인분당선 고색/인천 방면 열차</option>
+                                <option value="ggu">경강선 판교 방면 열차</option>
+                                <option value="ggd">경강선 여주 방면 열차</option>
+                            </select>
+                        </div>
+                        <div class="col-lg-12 col-md-12 col-sm-12 form-group" data-for="transfer">
+                            <h5 class="align-center mb-3">환승해서 탈 열차</h5>
+                            <select name="transfer" data-form-field="transfer" class="form-control input-group" id="transfer">
+                                <option value="sbu" selected>수인분당선 왕십리 방면 열차</option>
+                                <option value="sbd">수인분당선 고색/인천 방면 열차</option>
+                                <option value="ggu">경강선 판교 방면 열차</option>
+                                <option value="ggd">경강선 여주 방면 열차</option>
+                            </select>
+                        </div>
+                        
+                        <div class="col-auto mbr-section-btn align-center"><button type="button" onclick="_submit();" class="btn btn-primary display-4">확인</button></div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section><section style="background-color: #fff; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif; color:#aaa; font-size:12px; padding: 0; align-items: center; display: flex;"><a href="https://mobirise.site/d" style="flex: 1 1; height: 3rem; padding-left: 1rem;"></a><p style="flex: 0 0 auto; margin:0; padding-right:1rem;">Site was <a href="https://mobirise.site/g" style="color:#aaa;">designed</a> with Mobirise</p></section><script src="../../assets/web/../../assets/jquery/jquery.min.js"></script>  <script src="../../assets/popper/popper.min.js"></script>  <script src="../../assets/tether/tether.min.js"></script>  <script src="../../assets/bootstrap/js/bootstrap.min.js"></script>  <script src="../../assets/smoothscroll/smooth-scroll.js"></script>  <script src="../../assets/formstyler/jquery.formstyler.js"></script>  <script src="../../assets/formstyler/jquery.formstyler.min.js"></script>  <script src="../../assets/datepicker/jquery.datetimepicker.full.js"></script>  <script src="../../assets/theme/js/script.js"></script>  
+  
+  
+</body>
+</html>

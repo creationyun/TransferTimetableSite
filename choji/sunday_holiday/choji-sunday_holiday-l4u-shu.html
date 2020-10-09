@@ -1,0 +1,918 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+<style>th {text-align:center;} td {text-align:center;} h3 {text-align:center;}</style>
+<title>TransferTimetable Results</title>
+</head>
+<body>
+<div class="container-fluid">
+<h3>초지역 4호선 (일요일/공휴일, 상행) -> 초지역 서해선 (일요일/공휴일, 상행) (5.0 minutes)</h3>
+<br>
+<table class="table">
+<thead>
+<tr>
+<th scope="col"></th>
+<th scope="col" colspan="2">Before Transfer</th>
+<th scope="col" colspan="2">After Transfer</th>
+<th scope="col"></th>
+</tr>
+<tr>
+<th scope="col">#</th>
+<th scope="col">Bound for</th>
+<th scope="col">Arrival time</th>
+<th scope="col">Bound for</th>
+<th scope="col">Arrival time</th>
+<th scope="col">Wait time</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th scope="row">1</th>
+<td><p style="color:red">당고개</p></td>
+<td><p style="color:red">05:23:00</p></td>
+<td><p style="color:red">소사</p></td>
+<td><p style="color:red">05:44:00</p></td>
+<td><p style="color:red">+0:21:00</p></td>
+</tr>
+<tr>
+<th scope="row">2</th>
+<td><p style="color:black">당고개</p></td>
+<td><p style="color:black">05:30:00</p></td>
+<td><p style="color:black">소사</p></td>
+<td><p style="color:black">05:44:00</p></td>
+<td><p style="color:black">+0:14:00</p></td>
+</tr>
+<tr>
+<th scope="row">3</th>
+<td><p style="color:red">당고개</p></td>
+<td><p style="color:red">05:42:00</p></td>
+<td><p style="color:red">소사</p></td>
+<td><p style="color:red">06:04:00</p></td>
+<td><p style="color:red">+0:22:00</p></td>
+</tr>
+<tr>
+<th scope="row">4</th>
+<td><p style="color:black">당고개</p></td>
+<td><p style="color:black">05:54:00</p></td>
+<td><p style="color:black">소사</p></td>
+<td><p style="color:black">06:04:00</p></td>
+<td><p style="color:black">+0:10:00</p></td>
+</tr>
+<tr>
+<th scope="row">5</th>
+<td><p style="color:red">당고개</p></td>
+<td><p style="color:red">06:06:00</p></td>
+<td><p style="color:red">소사</p></td>
+<td><p style="color:red">06:24:00</p></td>
+<td><p style="color:red">+0:18:00</p></td>
+</tr>
+<tr>
+<th scope="row">6</th>
+<td><p style="color:green">당고개</p></td>
+<td><p style="color:green">06:18:00</p></td>
+<td><p style="color:green">소사</p></td>
+<td><p style="color:green">06:24:00</p></td>
+<td><p style="color:green">+0:06:00</p></td>
+</tr>
+<tr>
+<th scope="row">7</th>
+<td><p style="color:black">당고개</p></td>
+<td><p style="color:black">06:30:00</p></td>
+<td><p style="color:black">소사</p></td>
+<td><p style="color:black">06:44:00</p></td>
+<td><p style="color:black">+0:14:00</p></td>
+</tr>
+<tr>
+<th scope="row">8</th>
+<td><p style="color:red">당고개</p></td>
+<td><p style="color:red">06:42:00</p></td>
+<td><p style="color:red">소사</p></td>
+<td><p style="color:red">07:04:00</p></td>
+<td><p style="color:red">+0:22:00</p></td>
+</tr>
+<tr>
+<th scope="row">9</th>
+<td><p style="color:black">당고개</p></td>
+<td><p style="color:black">06:54:00</p></td>
+<td><p style="color:black">소사</p></td>
+<td><p style="color:black">07:04:00</p></td>
+<td><p style="color:black">+0:10:00</p></td>
+</tr>
+<tr>
+<th scope="row">10</th>
+<td><p style="color:red">당고개</p></td>
+<td><p style="color:red">07:06:00</p></td>
+<td><p style="color:red">소사</p></td>
+<td><p style="color:red">07:24:00</p></td>
+<td><p style="color:red">+0:18:00</p></td>
+</tr>
+<tr>
+<th scope="row">11</th>
+<td><p style="color:black">당고개</p></td>
+<td><p style="color:black">07:10:30</p></td>
+<td><p style="color:black">소사</p></td>
+<td><p style="color:black">07:24:00</p></td>
+<td><p style="color:black">+0:13:30</p></td>
+</tr>
+<tr>
+<th scope="row">12</th>
+<td><p style="color:green">당고개</p></td>
+<td><p style="color:green">07:18:00</p></td>
+<td><p style="color:green">소사</p></td>
+<td><p style="color:green">07:24:00</p></td>
+<td><p style="color:green">+0:06:00</p></td>
+</tr>
+<tr>
+<th scope="row">13</th>
+<td><p style="color:black">당고개</p></td>
+<td><p style="color:black">07:30:00</p></td>
+<td><p style="color:black">소사</p></td>
+<td><p style="color:black">07:44:00</p></td>
+<td><p style="color:black">+0:14:00</p></td>
+</tr>
+<tr>
+<th scope="row">14</th>
+<td><p style="color:green">당고개</p></td>
+<td><p style="color:green">07:36:00</p></td>
+<td><p style="color:green">소사</p></td>
+<td><p style="color:green">07:44:00</p></td>
+<td><p style="color:green">+0:08:00</p></td>
+</tr>
+<tr>
+<th scope="row">15</th>
+<td><p style="color:red">당고개</p></td>
+<td><p style="color:red">07:48:00</p></td>
+<td><p style="color:red">소사</p></td>
+<td><p style="color:red">08:04:00</p></td>
+<td><p style="color:red">+0:16:00</p></td>
+</tr>
+<tr>
+<th scope="row">16</th>
+<td><p style="color:red">당고개</p></td>
+<td><p style="color:red">08:00:00</p></td>
+<td><p style="color:red">소사</p></td>
+<td><p style="color:red">08:24:00</p></td>
+<td><p style="color:red">+0:24:00</p></td>
+</tr>
+<tr>
+<th scope="row">17</th>
+<td><p style="color:black">당고개</p></td>
+<td><p style="color:black">08:12:00</p></td>
+<td><p style="color:black">소사</p></td>
+<td><p style="color:black">08:24:00</p></td>
+<td><p style="color:black">+0:12:00</p></td>
+</tr>
+<tr>
+<th scope="row">18</th>
+<td><p style="color:red">당고개</p></td>
+<td><p style="color:red">08:22:00</p></td>
+<td><p style="color:red">소사</p></td>
+<td><p style="color:red">08:44:00</p></td>
+<td><p style="color:red">+0:22:00</p></td>
+</tr>
+<tr>
+<th scope="row">19</th>
+<td><p style="color:red">당고개</p></td>
+<td><p style="color:red">08:27:00</p></td>
+<td><p style="color:red">소사</p></td>
+<td><p style="color:red">08:44:00</p></td>
+<td><p style="color:red">+0:17:00</p></td>
+</tr>
+<tr>
+<th scope="row">20</th>
+<td><p style="color:green">당고개</p></td>
+<td><p style="color:green">08:37:00</p></td>
+<td><p style="color:green">소사</p></td>
+<td><p style="color:green">08:44:00</p></td>
+<td><p style="color:green">+0:07:00</p></td>
+</tr>
+<tr>
+<th scope="row">21</th>
+<td><p style="color:red">당고개</p></td>
+<td><p style="color:red">08:48:00</p></td>
+<td><p style="color:red">소사</p></td>
+<td><p style="color:red">09:04:00</p></td>
+<td><p style="color:red">+0:16:00</p></td>
+</tr>
+<tr>
+<th scope="row">22</th>
+<td><p style="color:red">당고개</p></td>
+<td><p style="color:red">09:00:00</p></td>
+<td><p style="color:red">소사</p></td>
+<td><p style="color:red">09:24:00</p></td>
+<td><p style="color:red">+0:24:00</p></td>
+</tr>
+<tr>
+<th scope="row">23</th>
+<td><p style="color:black">당고개</p></td>
+<td><p style="color:black">09:12:00</p></td>
+<td><p style="color:black">소사</p></td>
+<td><p style="color:black">09:24:00</p></td>
+<td><p style="color:black">+0:12:00</p></td>
+</tr>
+<tr>
+<th scope="row">24</th>
+<td><p style="color:red">당고개</p></td>
+<td><p style="color:red">09:24:00</p></td>
+<td><p style="color:red">소사</p></td>
+<td><p style="color:red">09:44:00</p></td>
+<td><p style="color:red">+0:20:00</p></td>
+</tr>
+<tr>
+<th scope="row">25</th>
+<td><p style="color:green">당고개</p></td>
+<td><p style="color:green">09:36:00</p></td>
+<td><p style="color:green">소사</p></td>
+<td><p style="color:green">09:44:00</p></td>
+<td><p style="color:green">+0:08:00</p></td>
+</tr>
+<tr>
+<th scope="row">26</th>
+<td><p style="color:red">당고개</p></td>
+<td><p style="color:red">09:41:00</p></td>
+<td><p style="color:red">소사</p></td>
+<td><p style="color:red">10:04:00</p></td>
+<td><p style="color:red">+0:23:00</p></td>
+</tr>
+<tr>
+<th scope="row">27</th>
+<td><p style="color:black">당고개</p></td>
+<td><p style="color:black">09:53:00</p></td>
+<td><p style="color:black">소사</p></td>
+<td><p style="color:black">10:04:00</p></td>
+<td><p style="color:black">+0:11:00</p></td>
+</tr>
+<tr>
+<th scope="row">28</th>
+<td><p style="color:red">당고개</p></td>
+<td><p style="color:red">10:05:00</p></td>
+<td><p style="color:red">소사</p></td>
+<td><p style="color:red">10:24:00</p></td>
+<td><p style="color:red">+0:19:00</p></td>
+</tr>
+<tr>
+<th scope="row">29</th>
+<td><p style="color:green">당고개</p></td>
+<td><p style="color:green">10:17:00</p></td>
+<td><p style="color:green">소사</p></td>
+<td><p style="color:green">10:24:00</p></td>
+<td><p style="color:green">+0:07:00</p></td>
+</tr>
+<tr>
+<th scope="row">30</th>
+<td><p style="color:red">당고개</p></td>
+<td><p style="color:red">10:26:00</p></td>
+<td><p style="color:red">소사</p></td>
+<td><p style="color:red">10:44:00</p></td>
+<td><p style="color:red">+0:18:00</p></td>
+</tr>
+<tr>
+<th scope="row">31</th>
+<td><p style="color:black">당고개</p></td>
+<td><p style="color:black">10:33:00</p></td>
+<td><p style="color:black">소사</p></td>
+<td><p style="color:black">10:44:00</p></td>
+<td><p style="color:black">+0:11:00</p></td>
+</tr>
+<tr>
+<th scope="row">32</th>
+<td><p style="color:red">당고개</p></td>
+<td><p style="color:red">10:42:00</p></td>
+<td><p style="color:red">소사</p></td>
+<td><p style="color:red">11:04:00</p></td>
+<td><p style="color:red">+0:22:00</p></td>
+</tr>
+<tr>
+<th scope="row">33</th>
+<td><p style="color:black">당고개</p></td>
+<td><p style="color:black">10:52:00</p></td>
+<td><p style="color:black">소사</p></td>
+<td><p style="color:black">11:04:00</p></td>
+<td><p style="color:black">+0:12:00</p></td>
+</tr>
+<tr>
+<th scope="row">34</th>
+<td><p style="color:green">당고개</p></td>
+<td><p style="color:green">10:57:00</p></td>
+<td><p style="color:green">소사</p></td>
+<td><p style="color:green">11:04:00</p></td>
+<td><p style="color:green">+0:07:00</p></td>
+</tr>
+<tr>
+<th scope="row">35</th>
+<td><p style="color:red">당고개</p></td>
+<td><p style="color:red">11:07:00</p></td>
+<td><p style="color:red">소사</p></td>
+<td><p style="color:red">11:24:00</p></td>
+<td><p style="color:red">+0:17:00</p></td>
+</tr>
+<tr>
+<th scope="row">36</th>
+<td><p style="color:green">당고개</p></td>
+<td><p style="color:green">11:17:00</p></td>
+<td><p style="color:green">소사</p></td>
+<td><p style="color:green">11:24:00</p></td>
+<td><p style="color:green">+0:07:00</p></td>
+</tr>
+<tr>
+<th scope="row">37</th>
+<td><p style="color:red">당고개</p></td>
+<td><p style="color:red">11:22:00</p></td>
+<td><p style="color:red">소사</p></td>
+<td><p style="color:red">11:44:00</p></td>
+<td><p style="color:red">+0:22:00</p></td>
+</tr>
+<tr>
+<th scope="row">38</th>
+<td><p style="color:black">당고개</p></td>
+<td><p style="color:black">11:32:00</p></td>
+<td><p style="color:black">소사</p></td>
+<td><p style="color:black">11:44:00</p></td>
+<td><p style="color:black">+0:12:00</p></td>
+</tr>
+<tr>
+<th scope="row">39</th>
+<td><p style="color:red">당고개</p></td>
+<td><p style="color:red">11:40:30</p></td>
+<td><p style="color:red">소사</p></td>
+<td><p style="color:red">12:04:00</p></td>
+<td><p style="color:red">+0:23:30</p></td>
+</tr>
+<tr>
+<th scope="row">40</th>
+<td><p style="color:red">당고개</p></td>
+<td><p style="color:red">11:47:00</p></td>
+<td><p style="color:red">소사</p></td>
+<td><p style="color:red">12:04:00</p></td>
+<td><p style="color:red">+0:17:00</p></td>
+</tr>
+<tr>
+<th scope="row">41</th>
+<td><p style="color:black">당고개</p></td>
+<td><p style="color:black">11:55:00</p></td>
+<td><p style="color:black">소사</p></td>
+<td><p style="color:black">12:04:00</p></td>
+<td><p style="color:black">+0:09:00</p></td>
+</tr>
+<tr>
+<th scope="row">42</th>
+<td><p style="color:red">당고개</p></td>
+<td><p style="color:red">12:03:00</p></td>
+<td><p style="color:red">소사</p></td>
+<td><p style="color:red">12:24:00</p></td>
+<td><p style="color:red">+0:21:00</p></td>
+</tr>
+<tr>
+<th scope="row">43</th>
+<td><p style="color:black">당고개</p></td>
+<td><p style="color:black">12:12:00</p></td>
+<td><p style="color:black">소사</p></td>
+<td><p style="color:black">12:24:00</p></td>
+<td><p style="color:black">+0:12:00</p></td>
+</tr>
+<tr>
+<th scope="row">44</th>
+<td><p style="color:red">당고개</p></td>
+<td><p style="color:red">12:22:00</p></td>
+<td><p style="color:red">소사</p></td>
+<td><p style="color:red">12:44:00</p></td>
+<td><p style="color:red">+0:22:00</p></td>
+</tr>
+<tr>
+<th scope="row">45</th>
+<td><p style="color:black">당고개</p></td>
+<td><p style="color:black">12:32:00</p></td>
+<td><p style="color:black">소사</p></td>
+<td><p style="color:black">12:44:00</p></td>
+<td><p style="color:black">+0:12:00</p></td>
+</tr>
+<tr>
+<th scope="row">46</th>
+<td><p style="color:green">당고개</p></td>
+<td><p style="color:green">12:37:00</p></td>
+<td><p style="color:green">소사</p></td>
+<td><p style="color:green">12:44:00</p></td>
+<td><p style="color:green">+0:07:00</p></td>
+</tr>
+<tr>
+<th scope="row">47</th>
+<td><p style="color:red">당고개</p></td>
+<td><p style="color:red">12:47:00</p></td>
+<td><p style="color:red">소사</p></td>
+<td><p style="color:red">13:04:00</p></td>
+<td><p style="color:red">+0:17:00</p></td>
+</tr>
+<tr>
+<th scope="row">48</th>
+<td><p style="color:black">당고개</p></td>
+<td><p style="color:black">12:55:00</p></td>
+<td><p style="color:black">소사</p></td>
+<td><p style="color:black">13:04:00</p></td>
+<td><p style="color:black">+0:09:00</p></td>
+</tr>
+<tr>
+<th scope="row">49</th>
+<td><p style="color:red">당고개</p></td>
+<td><p style="color:red">13:03:00</p></td>
+<td><p style="color:red">소사</p></td>
+<td><p style="color:red">13:24:00</p></td>
+<td><p style="color:red">+0:21:00</p></td>
+</tr>
+<tr>
+<th scope="row">50</th>
+<td><p style="color:black">당고개</p></td>
+<td><p style="color:black">13:12:00</p></td>
+<td><p style="color:black">소사</p></td>
+<td><p style="color:black">13:24:00</p></td>
+<td><p style="color:black">+0:12:00</p></td>
+</tr>
+<tr>
+<th scope="row">51</th>
+<td><p style="color:red">당고개</p></td>
+<td><p style="color:red">13:22:00</p></td>
+<td><p style="color:red">소사</p></td>
+<td><p style="color:red">13:44:00</p></td>
+<td><p style="color:red">+0:22:00</p></td>
+</tr>
+<tr>
+<th scope="row">52</th>
+<td><p style="color:red">당고개</p></td>
+<td><p style="color:red">13:27:00</p></td>
+<td><p style="color:red">소사</p></td>
+<td><p style="color:red">13:44:00</p></td>
+<td><p style="color:red">+0:17:00</p></td>
+</tr>
+<tr>
+<th scope="row">53</th>
+<td><p style="color:green">당고개</p></td>
+<td><p style="color:green">13:37:00</p></td>
+<td><p style="color:green">소사</p></td>
+<td><p style="color:green">13:44:00</p></td>
+<td><p style="color:green">+0:07:00</p></td>
+</tr>
+<tr>
+<th scope="row">54</th>
+<td><p style="color:red">당고개</p></td>
+<td><p style="color:red">13:47:00</p></td>
+<td><p style="color:red">소사</p></td>
+<td><p style="color:red">14:04:00</p></td>
+<td><p style="color:red">+0:17:00</p></td>
+</tr>
+<tr>
+<th scope="row">55</th>
+<td><p style="color:black">당고개</p></td>
+<td><p style="color:black">13:52:00</p></td>
+<td><p style="color:black">소사</p></td>
+<td><p style="color:black">14:04:00</p></td>
+<td><p style="color:black">+0:12:00</p></td>
+</tr>
+<tr>
+<th scope="row">56</th>
+<td><p style="color:red">당고개</p></td>
+<td><p style="color:red">14:00:00</p></td>
+<td><p style="color:red">소사</p></td>
+<td><p style="color:red">14:24:00</p></td>
+<td><p style="color:red">+0:24:00</p></td>
+</tr>
+<tr>
+<th scope="row">57</th>
+<td><p style="color:red">당고개</p></td>
+<td><p style="color:red">14:08:00</p></td>
+<td><p style="color:red">소사</p></td>
+<td><p style="color:red">14:24:00</p></td>
+<td><p style="color:red">+0:16:00</p></td>
+</tr>
+<tr>
+<th scope="row">58</th>
+<td><p style="color:green">당고개</p></td>
+<td><p style="color:green">14:17:00</p></td>
+<td><p style="color:green">소사</p></td>
+<td><p style="color:green">14:24:00</p></td>
+<td><p style="color:green">+0:07:00</p></td>
+</tr>
+<tr>
+<th scope="row">59</th>
+<td><p style="color:red">당고개</p></td>
+<td><p style="color:red">14:27:00</p></td>
+<td><p style="color:red">소사</p></td>
+<td><p style="color:red">14:44:00</p></td>
+<td><p style="color:red">+0:17:00</p></td>
+</tr>
+<tr>
+<th scope="row">60</th>
+<td><p style="color:green">당고개</p></td>
+<td><p style="color:green">14:37:00</p></td>
+<td><p style="color:green">소사</p></td>
+<td><p style="color:green">14:44:00</p></td>
+<td><p style="color:green">+0:07:00</p></td>
+</tr>
+<tr>
+<th scope="row">61</th>
+<td><p style="color:red">당고개</p></td>
+<td><p style="color:red">14:42:00</p></td>
+<td><p style="color:red">소사</p></td>
+<td><p style="color:red">15:04:00</p></td>
+<td><p style="color:red">+0:22:00</p></td>
+</tr>
+<tr>
+<th scope="row">62</th>
+<td><p style="color:black">당고개</p></td>
+<td><p style="color:black">14:52:00</p></td>
+<td><p style="color:black">소사</p></td>
+<td><p style="color:black">15:04:00</p></td>
+<td><p style="color:black">+0:12:00</p></td>
+</tr>
+<tr>
+<th scope="row">63</th>
+<td><p style="color:red">당고개</p></td>
+<td><p style="color:red">15:00:00</p></td>
+<td><p style="color:red">소사</p></td>
+<td><p style="color:red">15:24:00</p></td>
+<td><p style="color:red">+0:24:00</p></td>
+</tr>
+<tr>
+<th scope="row">64</th>
+<td><p style="color:red">당고개</p></td>
+<td><p style="color:red">15:08:00</p></td>
+<td><p style="color:red">소사</p></td>
+<td><p style="color:red">15:24:00</p></td>
+<td><p style="color:red">+0:16:00</p></td>
+</tr>
+<tr>
+<th scope="row">65</th>
+<td><p style="color:green">당고개</p></td>
+<td><p style="color:green">15:17:00</p></td>
+<td><p style="color:green">소사</p></td>
+<td><p style="color:green">15:24:00</p></td>
+<td><p style="color:green">+0:07:00</p></td>
+</tr>
+<tr>
+<th scope="row">66</th>
+<td><p style="color:red">당고개</p></td>
+<td><p style="color:red">15:26:00</p></td>
+<td><p style="color:red">소사</p></td>
+<td><p style="color:red">15:44:00</p></td>
+<td><p style="color:red">+0:18:00</p></td>
+</tr>
+<tr>
+<th scope="row">67</th>
+<td><p style="color:black">당고개</p></td>
+<td><p style="color:black">15:33:00</p></td>
+<td><p style="color:black">소사</p></td>
+<td><p style="color:black">15:44:00</p></td>
+<td><p style="color:black">+0:11:00</p></td>
+</tr>
+<tr>
+<th scope="row">68</th>
+<td><p style="color:red">당고개</p></td>
+<td><p style="color:red">15:42:00</p></td>
+<td><p style="color:red">소사</p></td>
+<td><p style="color:red">16:04:00</p></td>
+<td><p style="color:red">+0:22:00</p></td>
+</tr>
+<tr>
+<th scope="row">69</th>
+<td><p style="color:black">당고개</p></td>
+<td><p style="color:black">15:52:00</p></td>
+<td><p style="color:black">소사</p></td>
+<td><p style="color:black">16:04:00</p></td>
+<td><p style="color:black">+0:12:00</p></td>
+</tr>
+<tr>
+<th scope="row">70</th>
+<td><p style="color:green">당고개</p></td>
+<td><p style="color:green">15:57:00</p></td>
+<td><p style="color:green">소사</p></td>
+<td><p style="color:green">16:04:00</p></td>
+<td><p style="color:green">+0:07:00</p></td>
+</tr>
+<tr>
+<th scope="row">71</th>
+<td><p style="color:red">당고개</p></td>
+<td><p style="color:red">16:06:00</p></td>
+<td><p style="color:red">소사</p></td>
+<td><p style="color:red">16:24:00</p></td>
+<td><p style="color:red">+0:18:00</p></td>
+</tr>
+<tr>
+<th scope="row">72</th>
+<td><p style="color:black">당고개</p></td>
+<td><p style="color:black">16:13:00</p></td>
+<td><p style="color:black">소사</p></td>
+<td><p style="color:black">16:24:00</p></td>
+<td><p style="color:black">+0:11:00</p></td>
+</tr>
+<tr>
+<th scope="row">73</th>
+<td><p style="color:red">당고개</p></td>
+<td><p style="color:red">16:22:00</p></td>
+<td><p style="color:red">소사</p></td>
+<td><p style="color:red">16:44:00</p></td>
+<td><p style="color:red">+0:22:00</p></td>
+</tr>
+<tr>
+<th scope="row">74</th>
+<td><p style="color:black">당고개</p></td>
+<td><p style="color:black">16:32:00</p></td>
+<td><p style="color:black">소사</p></td>
+<td><p style="color:black">16:44:00</p></td>
+<td><p style="color:black">+0:12:00</p></td>
+</tr>
+<tr>
+<th scope="row">75</th>
+<td><p style="color:red">당고개</p></td>
+<td><p style="color:red">16:40:30</p></td>
+<td><p style="color:red">소사</p></td>
+<td><p style="color:red">17:04:00</p></td>
+<td><p style="color:red">+0:23:30</p></td>
+</tr>
+<tr>
+<th scope="row">76</th>
+<td><p style="color:red">당고개</p></td>
+<td><p style="color:red">16:47:00</p></td>
+<td><p style="color:red">소사</p></td>
+<td><p style="color:red">17:04:00</p></td>
+<td><p style="color:red">+0:17:00</p></td>
+</tr>
+<tr>
+<th scope="row">77</th>
+<td><p style="color:green">당고개</p></td>
+<td><p style="color:green">16:57:00</p></td>
+<td><p style="color:green">소사</p></td>
+<td><p style="color:green">17:04:00</p></td>
+<td><p style="color:green">+0:07:00</p></td>
+</tr>
+<tr>
+<th scope="row">78</th>
+<td><p style="color:red">당고개</p></td>
+<td><p style="color:red">17:02:00</p></td>
+<td><p style="color:red">소사</p></td>
+<td><p style="color:red">17:24:00</p></td>
+<td><p style="color:red">+0:22:00</p></td>
+</tr>
+<tr>
+<th scope="row">79</th>
+<td><p style="color:black">당고개</p></td>
+<td><p style="color:black">17:13:00</p></td>
+<td><p style="color:black">소사</p></td>
+<td><p style="color:black">17:24:00</p></td>
+<td><p style="color:black">+0:11:00</p></td>
+</tr>
+<tr>
+<th scope="row">80</th>
+<td><p style="color:red">당고개</p></td>
+<td><p style="color:red">17:24:00</p></td>
+<td><p style="color:red">소사</p></td>
+<td><p style="color:red">17:44:00</p></td>
+<td><p style="color:red">+0:20:00</p></td>
+</tr>
+<tr>
+<th scope="row">81</th>
+<td><p style="color:black">당고개</p></td>
+<td><p style="color:black">17:34:00</p></td>
+<td><p style="color:black">소사</p></td>
+<td><p style="color:black">17:44:00</p></td>
+<td><p style="color:black">+0:10:00</p></td>
+</tr>
+<tr>
+<th scope="row">82</th>
+<td><p style="color:green">당고개</p></td>
+<td><p style="color:green">17:39:00</p></td>
+<td><p style="color:green">소사</p></td>
+<td><p style="color:green">17:44:00</p></td>
+<td><p style="color:green">+0:05:00</p></td>
+</tr>
+<tr>
+<th scope="row">83</th>
+<td><p style="color:black">당고개</p></td>
+<td><p style="color:black">17:49:00</p></td>
+<td><p style="color:black">소사</p></td>
+<td><p style="color:black">18:04:00</p></td>
+<td><p style="color:black">+0:15:00</p></td>
+</tr>
+<tr>
+<th scope="row">84</th>
+<td><p style="color:red">당고개</p></td>
+<td><p style="color:red">18:01:00</p></td>
+<td><p style="color:red">소사</p></td>
+<td><p style="color:red">18:24:00</p></td>
+<td><p style="color:red">+0:23:00</p></td>
+</tr>
+<tr>
+<th scope="row">85</th>
+<td><p style="color:black">당고개</p></td>
+<td><p style="color:black">18:13:00</p></td>
+<td><p style="color:black">소사</p></td>
+<td><p style="color:black">18:24:00</p></td>
+<td><p style="color:black">+0:11:00</p></td>
+</tr>
+<tr>
+<th scope="row">86</th>
+<td><p style="color:green">당고개</p></td>
+<td><p style="color:green">18:19:00</p></td>
+<td><p style="color:green">소사</p></td>
+<td><p style="color:green">18:24:00</p></td>
+<td><p style="color:green">+0:05:00</p></td>
+</tr>
+<tr>
+<th scope="row">87</th>
+<td><p style="color:black">당고개</p></td>
+<td><p style="color:black">18:31:00</p></td>
+<td><p style="color:black">소사</p></td>
+<td><p style="color:black">18:44:00</p></td>
+<td><p style="color:black">+0:13:00</p></td>
+</tr>
+<tr>
+<th scope="row">88</th>
+<td><p style="color:red">당고개</p></td>
+<td><p style="color:red">18:43:00</p></td>
+<td><p style="color:red">소사</p></td>
+<td><p style="color:red">19:04:00</p></td>
+<td><p style="color:red">+0:21:00</p></td>
+</tr>
+<tr>
+<th scope="row">89</th>
+<td><p style="color:black">당고개</p></td>
+<td><p style="color:black">18:55:00</p></td>
+<td><p style="color:black">소사</p></td>
+<td><p style="color:black">19:04:00</p></td>
+<td><p style="color:black">+0:09:00</p></td>
+</tr>
+<tr>
+<th scope="row">90</th>
+<td><p style="color:red">당고개</p></td>
+<td><p style="color:red">19:07:00</p></td>
+<td><p style="color:red">소사</p></td>
+<td><p style="color:red">19:24:00</p></td>
+<td><p style="color:red">+0:17:00</p></td>
+</tr>
+<tr>
+<th scope="row">91</th>
+<td><p style="color:green">당고개</p></td>
+<td><p style="color:green">19:19:00</p></td>
+<td><p style="color:green">소사</p></td>
+<td><p style="color:green">19:24:00</p></td>
+<td><p style="color:green">+0:05:00</p></td>
+</tr>
+<tr>
+<th scope="row">92</th>
+<td><p style="color:black">당고개</p></td>
+<td><p style="color:black">19:31:00</p></td>
+<td><p style="color:black">소사</p></td>
+<td><p style="color:black">19:44:00</p></td>
+<td><p style="color:black">+0:13:00</p></td>
+</tr>
+<tr>
+<th scope="row">93</th>
+<td><p style="color:red">당고개</p></td>
+<td><p style="color:red">19:43:00</p></td>
+<td><p style="color:red">소사</p></td>
+<td><p style="color:red">20:04:00</p></td>
+<td><p style="color:red">+0:21:00</p></td>
+</tr>
+<tr>
+<th scope="row">94</th>
+<td><p style="color:black">당고개</p></td>
+<td><p style="color:black">19:54:00</p></td>
+<td><p style="color:black">소사</p></td>
+<td><p style="color:black">20:04:00</p></td>
+<td><p style="color:black">+0:10:00</p></td>
+</tr>
+<tr>
+<th scope="row">95</th>
+<td><p style="color:red">당고개</p></td>
+<td><p style="color:red">20:02:00</p></td>
+<td><p style="color:red">소사</p></td>
+<td><p style="color:red">20:24:00</p></td>
+<td><p style="color:red">+0:22:00</p></td>
+</tr>
+<tr>
+<th scope="row">96</th>
+<td><p style="color:black">당고개</p></td>
+<td><p style="color:black">20:13:00</p></td>
+<td><p style="color:black">소사</p></td>
+<td><p style="color:black">20:24:00</p></td>
+<td><p style="color:black">+0:11:00</p></td>
+</tr>
+<tr>
+<th scope="row">97</th>
+<td><p style="color:red">당고개</p></td>
+<td><p style="color:red">20:25:00</p></td>
+<td><p style="color:red">소사</p></td>
+<td><p style="color:red">20:44:00</p></td>
+<td><p style="color:red">+0:19:00</p></td>
+</tr>
+<tr>
+<th scope="row">98</th>
+<td><p style="color:green">당고개</p></td>
+<td><p style="color:green">20:37:00</p></td>
+<td><p style="color:green">소사</p></td>
+<td><p style="color:green">20:44:00</p></td>
+<td><p style="color:green">+0:07:00</p></td>
+</tr>
+<tr>
+<th scope="row">99</th>
+<td><p style="color:black">당고개</p></td>
+<td><p style="color:black">20:49:00</p></td>
+<td><p style="color:black">소사</p></td>
+<td><p style="color:black">21:04:00</p></td>
+<td><p style="color:black">+0:15:00</p></td>
+</tr>
+<tr>
+<th scope="row">100</th>
+<td><p style="color:red">당고개</p></td>
+<td><p style="color:red">21:01:00</p></td>
+<td><p style="color:red">소사</p></td>
+<td><p style="color:red">21:24:00</p></td>
+<td><p style="color:red">+0:23:00</p></td>
+</tr>
+<tr>
+<th scope="row">101</th>
+<td><p style="color:black">당고개</p></td>
+<td><p style="color:black">21:13:00</p></td>
+<td><p style="color:black">소사</p></td>
+<td><p style="color:black">21:24:00</p></td>
+<td><p style="color:black">+0:11:00</p></td>
+</tr>
+<tr>
+<th scope="row">102</th>
+<td><p style="color:red">당고개</p></td>
+<td><p style="color:red">21:25:00</p></td>
+<td><p style="color:red">소사</p></td>
+<td><p style="color:red">21:44:00</p></td>
+<td><p style="color:red">+0:19:00</p></td>
+</tr>
+<tr>
+<th scope="row">103</th>
+<td><p style="color:green">당고개</p></td>
+<td><p style="color:green">21:37:00</p></td>
+<td><p style="color:green">소사</p></td>
+<td><p style="color:green">21:44:00</p></td>
+<td><p style="color:green">+0:07:00</p></td>
+</tr>
+<tr>
+<th scope="row">104</th>
+<td><p style="color:black">당고개</p></td>
+<td><p style="color:black">21:53:00</p></td>
+<td><p style="color:black">소사</p></td>
+<td><p style="color:black">22:04:00</p></td>
+<td><p style="color:black">+0:11:00</p></td>
+</tr>
+<tr>
+<th scope="row">105</th>
+<td><p style="color:black">당고개</p></td>
+<td><p style="color:black">22:09:00</p></td>
+<td><p style="color:black">소사</p></td>
+<td><p style="color:black">22:24:00</p></td>
+<td><p style="color:black">+0:15:00</p></td>
+</tr>
+<tr>
+<th scope="row">106</th>
+<td><p style="color:red">노원</p></td>
+<td><p style="color:red">22:25:00</p></td>
+<td><p style="color:red">소사</p></td>
+<td><p style="color:red">22:43:00</p></td>
+<td><p style="color:red">+0:18:00</p></td>
+</tr>
+<tr>
+<th scope="row">107</th>
+<td><p style="color:red">한성대입구</p></td>
+<td><p style="color:red">22:41:00</p></td>
+<td><p style="color:red">소사</p></td>
+<td><p style="color:red">23:04:00</p></td>
+<td><p style="color:red">+0:23:00</p></td>
+</tr>
+<tr>
+<th scope="row">108</th>
+<td><p style="color:green">금정</p></td>
+<td><p style="color:green">22:56:00</p></td>
+<td><p style="color:green">소사</p></td>
+<td><p style="color:green">23:04:00</p></td>
+<td><p style="color:green">+0:08:00</p></td>
+</tr>
+<tr>
+<th scope="row">109</th>
+<td><p style="color:black">사당</p></td>
+<td><p style="color:black">23:11:00</p></td>
+<td><p style="color:black">소사</p></td>
+<td><p style="color:black">23:22:00</p></td>
+<td><p style="color:black">+0:11:00</p></td>
+</tr>
+<tr>
+<th scope="row">110</th>
+<td><p style="color:green">금정</p></td>
+<td><p style="color:green">23:36:00</p></td>
+<td><p style="color:green">소사</p></td>
+<td><p style="color:green">23:44:00</p></td>
+<td><p style="color:green">+0:08:00</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</body>
+</html>

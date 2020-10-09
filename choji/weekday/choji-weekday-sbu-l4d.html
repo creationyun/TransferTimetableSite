@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+<style>th {text-align:center;} td {text-align:center;} h3 {text-align:center;}</style>
+<title>TransferTimetable Results</title>
+</head>
+<body>
+<div class="container-fluid">
+<h3>초지역 수인분당선 (평일, 상행) -> 초지역 4호선 (평일, 하행) (3.0 minutes)</h3>
+<br>
+<table class="table">
+<thead>
+<tr>
+<th scope="col"></th>
+<th scope="col" colspan="2">Before Transfer</th>
+<th scope="col" colspan="2">After Transfer</th>
+<th scope="col"></th>
+</tr>
+<tr>
+<th scope="col">#</th>
+<th scope="col">Bound for</th>
+<th scope="col">Arrival time</th>
+<th scope="col">Bound for</th>
+<th scope="col">Arrival time</th>
+<th scope="col">Wait time</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th scope="row">1</th>
+<td><p style="color:red">왕십리</p></td>
+<td><p style="color:red">05:47:30</p></td>
+<td><p style="color:red">오이도</p></td>
+<td><p style="color:red">06:08:00</p></td>
+<td><p style="color:red">+0:20:30</p></td>
+</tr>
+<tr>
+<th scope="row">2</th>
+<td><p style="color:red">왕십리</p></td>
+<td><p style="color:red">06:10:00</p></td>
+<td><p style="color:red">오이도</p></td>
+<td><p style="color:red">06:24:00</p></td>
+<td><p style="color:red">+0:14:00</p></td>
+</tr>
+<tr>
+<th scope="row">3</th>
+<td><p style="color:red">왕십리</p></td>
+<td><p style="color:red">06:39:00</p></td>
+<td><p style="color:red">오이도</p></td>
+<td><p style="color:red">06:56:00</p></td>
+<td><p style="color:red">+0:17:00</p></td>
+</tr>
+<tr>
+<th scope="row">4</th>
+<td><p style="color:green">왕십리</p></td>
+<td><p style="color:green">07:14:00</p></td>
+<td><p style="color:green">오이도</p></td>
+<td><p style="color:green">07:19:30</p></td>
+<td><p style="color:green">+0:05:30</p></td>
+</tr>
+<tr>
+<th scope="row">5</th>
+<td><p style="color:black">왕십리</p></td>
+<td><p style="color:black">07:27:00</p></td>
+<td><p style="color:black">오이도</p></td>
+<td><p style="color:black">07:39:30</p></td>
+<td><p style="color:black">+0:12:30</p></td>
+</tr>
+<tr>
+<th scope="row">6</th>
+<td><p style="color:green">왕십리</p></td>
+<td><p style="color:green">07:43:00</p></td>
+<td><p style="color:green">오이도</p></td>
+<td><p style="color:green">07:48:30</p></td>
+<td><p style="color:green">+0:05:30</p></td>
+</tr>
+<tr>
+<th scope="row">7</th>
+<td><p style="color:black">왕십리</p></td>
+<td><p style="color:black">07:55:00</p></td>
+<td><p style="color:black">오이도</p></td>
+<td><p style="color:black">08:04:30</p></td>
+<td><p style="color:black">+0:09:30</p></td>
+</tr>
+<tr>
+<th scope="row">8</th>
+<td><p style="color:green">왕십리</p></td>
+<td><p style="color:green">08:07:00</p></td>
+<td><p style="color:green">오이도</p></td>
+<td><p style="color:green">08:12:30</p></td>
+<td><p style="color:green">+0:05:30</p></td>
+</tr>
+<tr>
+<th scope="row">9</th>
+<td><p style="color:black">청량리</p></td>
+<td><p style="color:black">08:27:00</p></td>
+<td><p style="color:black">안산</p></td>
+<td><p style="color:black">08:33:30</p></td>
+<td><p style="color:black">+0:06:30</p></td>
+</tr>
+<tr>
+<th scope="row">10</th>
+<td><p style="color:black">왕십리</p></td>
+<td><p style="color:black">08:57:00</p></td>
+<td><p style="color:black">안산</p></td>
+<td><p style="color:black">09:03:30</p></td>
+<td><p style="color:black">+0:06:30</p></td>
+</tr>
+<tr>
+<th scope="row">11</th>
+<td><p style="color:green">왕십리</p></td>
+<td><p style="color:green">09:10:00</p></td>
+<td><p style="color:green">오이도</p></td>
+<td><p style="color:green">09:15:30</p></td>
+<td><p style="color:green">+0:05:30</p></td>
+</tr>
+<tr>
+<th scope="row">12</th>
+<td><p style="color:black">청량리</p></td>
+<td><p style="color:black">09:40:00</p></td>
+<td><p style="color:black">오이도</p></td>
+<td><p style="color:black">09:47:30</p></td>
+<td><p style="color:black">+0:07:30</p></td>
+</tr>
+<tr>
+<th scope="row">13</th>
+<td><p style="color:black">왕십리</p></td>
+<td><p style="color:black">09:57:00</p></td>
+<td><p style="color:black">오이도</p></td>
+<td><p style="color:black">10:03:30</p></td>
+<td><p style="color:black">+0:06:30</p></td>
+</tr>
+<tr>
+<th scope="row">14</th>
+<td><p style="color:black">청량리</p></td>
+<td><p style="color:black">10:22:00</p></td>
+<td><p style="color:black">오이도</p></td>
+<td><p style="color:black">10:29:30</p></td>
+<td><p style="color:black">+0:07:30</p></td>
+</tr>
+<tr>
+<th scope="row">15</th>
+<td><p style="color:black">왕십리</p></td>
+<td><p style="color:black">10:42:00</p></td>
+<td><p style="color:black">오이도</p></td>
+<td><p style="color:black">10:50:30</p></td>
+<td><p style="color:black">+0:08:30</p></td>
+</tr>
+<tr>
+<th scope="row">16</th>
+<td><p style="color:green">왕십리</p></td>
+<td><p style="color:green">11:08:00</p></td>
+<td><p style="color:green">안산</p></td>
+<td><p style="color:green">11:11:30</p></td>
+<td><p style="color:green">+0:03:30</p></td>
+</tr>
+<tr>
+<th scope="row">17</th>
+<td><p style="color:black">왕십리</p></td>
+<td><p style="color:black">11:27:00</p></td>
+<td><p style="color:black">오이도</p></td>
+<td><p style="color:black">11:35:30</p></td>
+<td><p style="color:black">+0:08:30</p></td>
+</tr>
+<tr>
+<th scope="row">18</th>
+<td><p style="color:black">왕십리</p></td>
+<td><p style="color:black">11:55:00</p></td>
+<td><p style="color:black">오이도</p></td>
+<td><p style="color:black">12:07:30</p></td>
+<td><p style="color:black">+0:12:30</p></td>
+</tr>
+<tr>
+<th scope="row">19</th>
+<td><p style="color:green">왕십리</p></td>
+<td><p style="color:green">12:14:00</p></td>
+<td><p style="color:green">오이도</p></td>
+<td><p style="color:green">12:18:30</p></td>
+<td><p style="color:green">+0:04:30</p></td>
+</tr>
+<tr>
+<th scope="row">20</th>
+<td><p style="color:black">왕십리</p></td>
+<td><p style="color:black">12:39:00</p></td>
+<td><p style="color:black">오이도</p></td>
+<td><p style="color:black">12:51:30</p></td>
+<td><p style="color:black">+0:12:30</p></td>
+</tr>
+<tr>
+<th scope="row">21</th>
+<td><p style="color:black">왕십리</p></td>
+<td><p style="color:black">12:58:00</p></td>
+<td><p style="color:black">오이도</p></td>
+<td><p style="color:black">13:10:30</p></td>
+<td><p style="color:black">+0:12:30</p></td>
+</tr>
+<tr>
+<th scope="row">22</th>
+<td><p style="color:black">왕십리</p></td>
+<td><p style="color:black">13:23:00</p></td>
+<td><p style="color:black">안산</p></td>
+<td><p style="color:black">13:34:30</p></td>
+<td><p style="color:black">+0:11:30</p></td>
+</tr>
+<tr>
+<th scope="row">23</th>
+<td><p style="color:black">왕십리</p></td>
+<td><p style="color:black">13:40:00</p></td>
+<td><p style="color:black">오이도</p></td>
+<td><p style="color:black">13:52:30</p></td>
+<td><p style="color:black">+0:12:30</p></td>
+</tr>
+<tr>
+<th scope="row">24</th>
+<td><p style="color:black">왕십리</p></td>
+<td><p style="color:black">14:08:00</p></td>
+<td><p style="color:black">오이도</p></td>
+<td><p style="color:black">14:14:30</p></td>
+<td><p style="color:black">+0:06:30</p></td>
+</tr>
+<tr>
+<th scope="row">25</th>
+<td><p style="color:black">왕십리</p></td>
+<td><p style="color:black">14:28:00</p></td>
+<td><p style="color:black">오이도</p></td>
+<td><p style="color:black">14:36:30</p></td>
+<td><p style="color:black">+0:08:30</p></td>
+</tr>
+<tr>
+<th scope="row">26</th>
+<td><p style="color:black">왕십리</p></td>
+<td><p style="color:black">14:59:00</p></td>
+<td><p style="color:black">오이도</p></td>
+<td><p style="color:black">15:05:30</p></td>
+<td><p style="color:black">+0:06:30</p></td>
+</tr>
+<tr>
+<th scope="row">27</th>
+<td><p style="color:green">왕십리</p></td>
+<td><p style="color:green">15:12:00</p></td>
+<td><p style="color:green">오이도</p></td>
+<td><p style="color:green">15:16:30</p></td>
+<td><p style="color:green">+0:04:30</p></td>
+</tr>
+<tr>
+<th scope="row">28</th>
+<td><p style="color:red">왕십리</p></td>
+<td><p style="color:red">15:42:00</p></td>
+<td><p style="color:red">오이도</p></td>
+<td><p style="color:red">15:55:30</p></td>
+<td><p style="color:red">+0:13:30</p></td>
+</tr>
+<tr>
+<th scope="row">29</th>
+<td><p style="color:black">왕십리</p></td>
+<td><p style="color:black">15:54:00</p></td>
+<td><p style="color:black">오이도</p></td>
+<td><p style="color:black">16:06:30</p></td>
+<td><p style="color:black">+0:12:30</p></td>
+</tr>
+<tr>
+<th scope="row">30</th>
+<td><p style="color:black">왕십리</p></td>
+<td><p style="color:black">16:31:00</p></td>
+<td><p style="color:black">오이도</p></td>
+<td><p style="color:black">16:40:30</p></td>
+<td><p style="color:black">+0:09:30</p></td>
+</tr>
+<tr>
+<th scope="row">31</th>
+<td><p style="color:black">왕십리</p></td>
+<td><p style="color:black">16:45:00</p></td>
+<td><p style="color:black">오이도</p></td>
+<td><p style="color:black">16:51:30</p></td>
+<td><p style="color:black">+0:06:30</p></td>
+</tr>
+<tr>
+<th scope="row">32</th>
+<td><p style="color:black">왕십리</p></td>
+<td><p style="color:black">17:09:00</p></td>
+<td><p style="color:black">오이도</p></td>
+<td><p style="color:black">17:20:30</p></td>
+<td><p style="color:black">+0:11:30</p></td>
+</tr>
+<tr>
+<th scope="row">33</th>
+<td><p style="color:black">왕십리</p></td>
+<td><p style="color:black">17:23:00</p></td>
+<td><p style="color:black">오이도</p></td>
+<td><p style="color:black">17:29:30</p></td>
+<td><p style="color:black">+0:06:30</p></td>
+</tr>
+<tr>
+<th scope="row">34</th>
+<td><p style="color:black">왕십리</p></td>
+<td><p style="color:black">17:59:00</p></td>
+<td><p style="color:black">오이도</p></td>
+<td><p style="color:black">18:09:30</p></td>
+<td><p style="color:black">+0:10:30</p></td>
+</tr>
+<tr>
+<th scope="row">35</th>
+<td><p style="color:black">왕십리</p></td>
+<td><p style="color:black">18:13:00</p></td>
+<td><p style="color:black">오이도</p></td>
+<td><p style="color:black">18:21:00</p></td>
+<td><p style="color:black">+0:08:00</p></td>
+</tr>
+<tr>
+<th scope="row">36</th>
+<td><p style="color:black">왕십리</p></td>
+<td><p style="color:black">18:27:00</p></td>
+<td><p style="color:black">오이도</p></td>
+<td><p style="color:black">18:37:30</p></td>
+<td><p style="color:black">+0:10:30</p></td>
+</tr>
+<tr>
+<th scope="row">37</th>
+<td><p style="color:green">왕십리</p></td>
+<td><p style="color:green">18:41:00</p></td>
+<td><p style="color:green">오이도</p></td>
+<td><p style="color:green">18:44:30</p></td>
+<td><p style="color:green">+0:03:30</p></td>
+</tr>
+<tr>
+<th scope="row">38</th>
+<td><p style="color:black">왕십리</p></td>
+<td><p style="color:black">19:13:00</p></td>
+<td><p style="color:black">오이도</p></td>
+<td><p style="color:black">19:20:00</p></td>
+<td><p style="color:black">+0:07:00</p></td>
+</tr>
+<tr>
+<th scope="row">39</th>
+<td><p style="color:green">왕십리</p></td>
+<td><p style="color:green">19:29:00</p></td>
+<td><p style="color:green">안산</p></td>
+<td><p style="color:green">19:33:30</p></td>
+<td><p style="color:green">+0:04:30</p></td>
+</tr>
+<tr>
+<th scope="row">40</th>
+<td><p style="color:green">왕십리</p></td>
+<td><p style="color:green">19:55:00</p></td>
+<td><p style="color:green">오이도</p></td>
+<td><p style="color:green">19:58:00</p></td>
+<td><p style="color:green">+0:03:00</p></td>
+</tr>
+<tr>
+<th scope="row">41</th>
+<td><p style="color:green">왕십리</p></td>
+<td><p style="color:green">20:12:00</p></td>
+<td><p style="color:green">오이도</p></td>
+<td><p style="color:green">20:16:30</p></td>
+<td><p style="color:green">+0:04:30</p></td>
+</tr>
+<tr>
+<th scope="row">42</th>
+<td><p style="color:green">왕십리</p></td>
+<td><p style="color:green">20:44:00</p></td>
+<td><p style="color:green">오이도</p></td>
+<td><p style="color:green">20:49:30</p></td>
+<td><p style="color:green">+0:05:30</p></td>
+</tr>
+<tr>
+<th scope="row">43</th>
+<td><p style="color:black">왕십리</p></td>
+<td><p style="color:black">21:11:00</p></td>
+<td><p style="color:black">오이도</p></td>
+<td><p style="color:black">21:22:00</p></td>
+<td><p style="color:black">+0:11:00</p></td>
+</tr>
+<tr>
+<th scope="row">44</th>
+<td><p style="color:black">죽전</p></td>
+<td><p style="color:black">21:40:00</p></td>
+<td><p style="color:black">안산</p></td>
+<td><p style="color:black">21:47:30</p></td>
+<td><p style="color:black">+0:07:30</p></td>
+</tr>
+<tr>
+<th scope="row">45</th>
+<td><p style="color:green">왕십리</p></td>
+<td><p style="color:green">21:53:00</p></td>
+<td><p style="color:green">오이도</p></td>
+<td><p style="color:green">21:56:00</p></td>
+<td><p style="color:green">+0:03:00</p></td>
+</tr>
+<tr>
+<th scope="row">46</th>
+<td><p style="color:green">왕십리</p></td>
+<td><p style="color:green">22:14:00</p></td>
+<td><p style="color:green">안산</p></td>
+<td><p style="color:green">22:18:30</p></td>
+<td><p style="color:green">+0:04:30</p></td>
+</tr>
+<tr>
+<th scope="row">47</th>
+<td><p style="color:black">죽전</p></td>
+<td><p style="color:black">22:45:00</p></td>
+<td><p style="color:black">안산</p></td>
+<td><p style="color:black">22:55:30</p></td>
+<td><p style="color:black">+0:10:30</p></td>
+</tr>
+<tr>
+<th scope="row">48</th>
+<td><p style="color:black">죽전</p></td>
+<td><p style="color:black">23:13:00</p></td>
+<td><p style="color:black">오이도</p></td>
+<td><p style="color:black">23:24:30</p></td>
+<td><p style="color:black">+0:11:30</p></td>
+</tr>
+<tr>
+<th scope="row">49</th>
+<td><p style="color:black">고색</p></td>
+<td><p style="color:black">23:43:00</p></td>
+<td><p style="color:black">오이도</p></td>
+<td><p style="color:black">23:53:30</p></td>
+<td><p style="color:black">+0:10:30</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</body>
+</html>
