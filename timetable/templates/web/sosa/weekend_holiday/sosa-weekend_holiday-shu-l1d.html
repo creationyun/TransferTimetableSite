@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+{% load static %}
+<link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.min.css' %}">
+<script src="{% static 'js/jquery.min.js' %}"></script>
+<script src="{% static 'popper/popper.min.js' %}"></script>
+<script src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
+<style>th {text-align:center;} td {text-align:center;} h3 {text-align:center;}</style>
+<title>TransferTimetable Results</title>
+</head>
+<body>
+<div class="container-fluid">
+<div class="row">
+<div class="col-md-12">
+<h3>소사역 서해선 (주말/공휴일, 상행) -> 소사역 1호선 (주말/공휴일, 하행) (4.0 minutes)</h3>
+<br>
+<table class="table">
+<thead>
+<tr>
+<th scope="col"></th>
+<th scope="col" colspan="2">Before Transfer</th>
+<th scope="col" colspan="2">After Transfer</th>
+<th scope="col"></th>
+</tr>
+<tr>
+<th scope="col">#</th>
+<th scope="col">Bound for</th>
+<th scope="col">Arrival time</th>
+<th scope="col">Bound for</th>
+<th scope="col">Arrival time</th>
+<th scope="col">Wait time</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th scope="row">1</th>
+<td><p style="color:black">소사</p></td>
+<td><p style="color:black">05:32:00</p></td>
+<td><p style="color:black">인천</p></td>
+<td><p style="color:black">05:42:00</p></td>
+<td><p style="color:black">+0:10:00</p></td>
+</tr>
+<tr>
+<th scope="row">2</th>
+<td><p style="color:green">소사</p></td>
+<td><p style="color:green">05:52:00</p></td>
+<td><p style="color:green">인천</p></td>
+<td><p style="color:green">05:56:30</p></td>
+<td><p style="color:green">+0:04:30</p></td>
+</tr>
+<tr>
+<th scope="row">3</th>
+<td><p style="color:green">소사</p></td>
+<td><p style="color:green">06:12:00</p></td>
+<td><p style="color:green">인천</p></td>
+<td><p style="color:green">06:19:00</p></td>
+<td><p style="color:green">+0:07:00</p></td>
+</tr>
+<tr>
+<th scope="row">4</th>
+<td><p style="color:green">소사</p></td>
+<td><p style="color:green">06:32:00</p></td>
+<td><p style="color:green">인천</p></td>
+<td><p style="color:green">06:37:00</p></td>
+<td><p style="color:green">+0:05:00</p></td>
+</tr>
+<tr>
+<th scope="row">5</th>
+<td><p style="color:black">소사</p></td>
+<td><p style="color:black">06:52:00</p></td>
+<td><p style="color:black">인천</p></td>
+<td><p style="color:black">06:59:30</p></td>
+<td><p style="color:black">+0:07:30</p></td>
+</tr>
+<tr>
+<th scope="row">6</th>
+<td><p style="color:black">소사</p></td>
+<td><p style="color:black">07:12:00</p></td>
+<td><p style="color:black">인천</p></td>
+<td><p style="color:black">07:21:30</p></td>
+<td><p style="color:black">+0:09:30</p></td>
+</tr>
+<tr>
+<th scope="row">7</th>
+<td><p style="color:black">소사</p></td>
+<td><p style="color:black">07:32:00</p></td>
+<td><p style="color:black">인천</p></td>
+<td><p style="color:black">07:45:30</p></td>
+<td><p style="color:black">+0:13:30</p></td>
+</tr>
+<tr>
+<th scope="row">8</th>
+<td><p style="color:red">소사</p></td>
+<td><p style="color:red">07:52:00</p></td>
+<td><p style="color:red">인천</p></td>
+<td><p style="color:red">08:08:30</p></td>
+<td><p style="color:red">+0:16:30</p></td>
+</tr>
+<tr>
+<th scope="row">9</th>
+<td><p style="color:green">소사</p></td>
+<td><p style="color:green">08:12:00</p></td>
+<td><p style="color:green">인천</p></td>
+<td><p style="color:green">08:18:00</p></td>
+<td><p style="color:green">+0:06:00</p></td>
+</tr>
+<tr>
+<th scope="row">10</th>
+<td><p style="color:black">소사</p></td>
+<td><p style="color:black">08:32:00</p></td>
+<td><p style="color:black">인천</p></td>
+<td><p style="color:black">08:41:30</p></td>
+<td><p style="color:black">+0:09:30</p></td>
+</tr>
+<tr>
+<th scope="row">11</th>
+<td><p style="color:green">소사</p></td>
+<td><p style="color:green">08:52:00</p></td>
+<td><p style="color:green">인천</p></td>
+<td><p style="color:green">08:57:30</p></td>
+<td><p style="color:green">+0:05:30</p></td>
+</tr>
+<tr>
+<th scope="row">12</th>
+<td><p style="color:black">소사</p></td>
+<td><p style="color:black">09:12:00</p></td>
+<td><p style="color:black">인천</p></td>
+<td><p style="color:black">09:22:00</p></td>
+<td><p style="color:black">+0:10:00</p></td>
+</tr>
+<tr>
+<th scope="row">13</th>
+<td><p style="color:green">소사</p></td>
+<td><p style="color:green">09:32:00</p></td>
+<td><p style="color:green">인천</p></td>
+<td><p style="color:green">09:38:30</p></td>
+<td><p style="color:green">+0:06:30</p></td>
+</tr>
+<tr>
+<th scope="row">14</th>
+<td><p style="color:black">소사</p></td>
+<td><p style="color:black">09:52:00</p></td>
+<td><p style="color:black">인천</p></td>
+<td><p style="color:black">10:00:00</p></td>
+<td><p style="color:black">+0:08:00</p></td>
+</tr>
+<tr>
+<th scope="row">15</th>
+<td><p style="color:black">소사</p></td>
+<td><p style="color:black">10:12:00</p></td>
+<td><p style="color:black">인천</p></td>
+<td><p style="color:black">10:21:30</p></td>
+<td><p style="color:black">+0:09:30</p></td>
+</tr>
+<tr>
+<th scope="row">16</th>
+<td><p style="color:black">소사</p></td>
+<td><p style="color:black">10:32:00</p></td>
+<td><p style="color:black">인천</p></td>
+<td><p style="color:black">10:45:00</p></td>
+<td><p style="color:black">+0:13:00</p></td>
+</tr>
+<tr>
+<th scope="row">17</th>
+<td><p style="color:green">소사</p></td>
+<td><p style="color:green">10:52:00</p></td>
+<td><p style="color:green">인천</p></td>
+<td><p style="color:green">10:56:00</p></td>
+<td><p style="color:green">+0:04:00</p></td>
+</tr>
+<tr>
+<th scope="row">18</th>
+<td><p style="color:black">소사</p></td>
+<td><p style="color:black">11:12:00</p></td>
+<td><p style="color:black">인천</p></td>
+<td><p style="color:black">11:22:00</p></td>
+<td><p style="color:black">+0:10:00</p></td>
+</tr>
+<tr>
+<th scope="row">19</th>
+<td><p style="color:green">소사</p></td>
+<td><p style="color:green">11:32:00</p></td>
+<td><p style="color:green">인천</p></td>
+<td><p style="color:green">11:39:00</p></td>
+<td><p style="color:green">+0:07:00</p></td>
+</tr>
+<tr>
+<th scope="row">20</th>
+<td><p style="color:black">소사</p></td>
+<td><p style="color:black">11:52:00</p></td>
+<td><p style="color:black">인천</p></td>
+<td><p style="color:black">12:00:30</p></td>
+<td><p style="color:black">+0:08:30</p></td>
+</tr>
+<tr>
+<th scope="row">21</th>
+<td><p style="color:green">소사</p></td>
+<td><p style="color:green">12:12:00</p></td>
+<td><p style="color:green">인천</p></td>
+<td><p style="color:green">12:18:00</p></td>
+<td><p style="color:green">+0:06:00</p></td>
+</tr>
+<tr>
+<th scope="row">22</th>
+<td><p style="color:green">소사</p></td>
+<td><p style="color:green">12:32:00</p></td>
+<td><p style="color:green">인천</p></td>
+<td><p style="color:green">12:38:30</p></td>
+<td><p style="color:green">+0:06:30</p></td>
+</tr>
+<tr>
+<th scope="row">23</th>
+<td><p style="color:black">소사</p></td>
+<td><p style="color:black">12:52:00</p></td>
+<td><p style="color:black">인천</p></td>
+<td><p style="color:black">13:01:00</p></td>
+<td><p style="color:black">+0:09:00</p></td>
+</tr>
+<tr>
+<th scope="row">24</th>
+<td><p style="color:green">소사</p></td>
+<td><p style="color:green">13:12:00</p></td>
+<td><p style="color:green">인천</p></td>
+<td><p style="color:green">13:18:00</p></td>
+<td><p style="color:green">+0:06:00</p></td>
+</tr>
+<tr>
+<th scope="row">25</th>
+<td><p style="color:green">소사</p></td>
+<td><p style="color:green">13:32:00</p></td>
+<td><p style="color:green">인천</p></td>
+<td><p style="color:green">13:38:30</p></td>
+<td><p style="color:green">+0:06:30</p></td>
+</tr>
+<tr>
+<th scope="row">26</th>
+<td><p style="color:black">소사</p></td>
+<td><p style="color:black">13:52:00</p></td>
+<td><p style="color:black">인천</p></td>
+<td><p style="color:black">14:01:00</p></td>
+<td><p style="color:black">+0:09:00</p></td>
+</tr>
+<tr>
+<th scope="row">27</th>
+<td><p style="color:green">소사</p></td>
+<td><p style="color:green">14:12:00</p></td>
+<td><p style="color:green">인천</p></td>
+<td><p style="color:green">14:17:30</p></td>
+<td><p style="color:green">+0:05:30</p></td>
+</tr>
+<tr>
+<th scope="row">28</th>
+<td><p style="color:black">소사</p></td>
+<td><p style="color:black">14:32:00</p></td>
+<td><p style="color:black">인천</p></td>
+<td><p style="color:black">14:44:00</p></td>
+<td><p style="color:black">+0:12:00</p></td>
+</tr>
+<tr>
+<th scope="row">29</th>
+<td><p style="color:black">소사</p></td>
+<td><p style="color:black">14:52:00</p></td>
+<td><p style="color:black">인천</p></td>
+<td><p style="color:black">15:02:30</p></td>
+<td><p style="color:black">+0:10:30</p></td>
+</tr>
+<tr>
+<th scope="row">30</th>
+<td><p style="color:black">소사</p></td>
+<td><p style="color:black">15:12:00</p></td>
+<td><p style="color:black">인천</p></td>
+<td><p style="color:black">15:23:00</p></td>
+<td><p style="color:black">+0:11:00</p></td>
+</tr>
+<tr>
+<th scope="row">31</th>
+<td><p style="color:green">소사</p></td>
+<td><p style="color:green">15:32:00</p></td>
+<td><p style="color:green">인천</p></td>
+<td><p style="color:green">15:38:30</p></td>
+<td><p style="color:green">+0:06:30</p></td>
+</tr>
+<tr>
+<th scope="row">32</th>
+<td><p style="color:black">소사</p></td>
+<td><p style="color:black">15:52:00</p></td>
+<td><p style="color:black">인천</p></td>
+<td><p style="color:black">16:02:00</p></td>
+<td><p style="color:black">+0:10:00</p></td>
+</tr>
+<tr>
+<th scope="row">33</th>
+<td><p style="color:green">소사</p></td>
+<td><p style="color:green">16:12:00</p></td>
+<td><p style="color:green">인천</p></td>
+<td><p style="color:green">16:18:30</p></td>
+<td><p style="color:green">+0:06:30</p></td>
+</tr>
+<tr>
+<th scope="row">34</th>
+<td><p style="color:black">소사</p></td>
+<td><p style="color:black">16:32:00</p></td>
+<td><p style="color:black">인천</p></td>
+<td><p style="color:black">16:39:30</p></td>
+<td><p style="color:black">+0:07:30</p></td>
+</tr>
+<tr>
+<th scope="row">35</th>
+<td><p style="color:black">소사</p></td>
+<td><p style="color:black">16:52:00</p></td>
+<td><p style="color:black">인천</p></td>
+<td><p style="color:black">17:00:00</p></td>
+<td><p style="color:black">+0:08:00</p></td>
+</tr>
+<tr>
+<th scope="row">36</th>
+<td><p style="color:black">소사</p></td>
+<td><p style="color:black">17:12:00</p></td>
+<td><p style="color:black">인천</p></td>
+<td><p style="color:black">17:20:00</p></td>
+<td><p style="color:black">+0:08:00</p></td>
+</tr>
+<tr>
+<th scope="row">37</th>
+<td><p style="color:red">소사</p></td>
+<td><p style="color:red">17:32:00</p></td>
+<td><p style="color:red">인천</p></td>
+<td><p style="color:red">17:48:30</p></td>
+<td><p style="color:red">+0:16:30</p></td>
+</tr>
+<tr>
+<th scope="row">38</th>
+<td><p style="color:black">소사</p></td>
+<td><p style="color:black">17:52:00</p></td>
+<td><p style="color:black">인천</p></td>
+<td><p style="color:black">18:01:00</p></td>
+<td><p style="color:black">+0:09:00</p></td>
+</tr>
+<tr>
+<th scope="row">39</th>
+<td><p style="color:green">소사</p></td>
+<td><p style="color:green">18:12:00</p></td>
+<td><p style="color:green">인천</p></td>
+<td><p style="color:green">18:17:00</p></td>
+<td><p style="color:green">+0:05:00</p></td>
+</tr>
+<tr>
+<th scope="row">40</th>
+<td><p style="color:black">소사</p></td>
+<td><p style="color:black">18:32:00</p></td>
+<td><p style="color:black">인천</p></td>
+<td><p style="color:black">18:40:00</p></td>
+<td><p style="color:black">+0:08:00</p></td>
+</tr>
+<tr>
+<th scope="row">41</th>
+<td><p style="color:black">소사</p></td>
+<td><p style="color:black">18:52:00</p></td>
+<td><p style="color:black">인천</p></td>
+<td><p style="color:black">19:02:30</p></td>
+<td><p style="color:black">+0:10:30</p></td>
+</tr>
+<tr>
+<th scope="row">42</th>
+<td><p style="color:black">소사</p></td>
+<td><p style="color:black">19:12:00</p></td>
+<td><p style="color:black">인천</p></td>
+<td><p style="color:black">19:24:00</p></td>
+<td><p style="color:black">+0:12:00</p></td>
+</tr>
+<tr>
+<th scope="row">43</th>
+<td><p style="color:green">소사</p></td>
+<td><p style="color:green">19:32:00</p></td>
+<td><p style="color:green">인천</p></td>
+<td><p style="color:green">19:38:00</p></td>
+<td><p style="color:green">+0:06:00</p></td>
+</tr>
+<tr>
+<th scope="row">44</th>
+<td><p style="color:black">소사</p></td>
+<td><p style="color:black">19:52:00</p></td>
+<td><p style="color:black">인천</p></td>
+<td><p style="color:black">20:06:00</p></td>
+<td><p style="color:black">+0:14:00</p></td>
+</tr>
+<tr>
+<th scope="row">45</th>
+<td><p style="color:black">소사</p></td>
+<td><p style="color:black">20:12:00</p></td>
+<td><p style="color:black">인천</p></td>
+<td><p style="color:black">20:21:00</p></td>
+<td><p style="color:black">+0:09:00</p></td>
+</tr>
+<tr>
+<th scope="row">46</th>
+<td><p style="color:black">소사</p></td>
+<td><p style="color:black">20:32:00</p></td>
+<td><p style="color:black">인천</p></td>
+<td><p style="color:black">20:41:30</p></td>
+<td><p style="color:black">+0:09:30</p></td>
+</tr>
+<tr>
+<th scope="row">47</th>
+<td><p style="color:black">소사</p></td>
+<td><p style="color:black">20:52:00</p></td>
+<td><p style="color:black">인천</p></td>
+<td><p style="color:black">21:00:30</p></td>
+<td><p style="color:black">+0:08:30</p></td>
+</tr>
+<tr>
+<th scope="row">48</th>
+<td><p style="color:green">소사</p></td>
+<td><p style="color:green">21:12:00</p></td>
+<td><p style="color:green">인천</p></td>
+<td><p style="color:green">21:19:00</p></td>
+<td><p style="color:green">+0:07:00</p></td>
+</tr>
+<tr>
+<th scope="row">49</th>
+<td><p style="color:green">소사</p></td>
+<td><p style="color:green">21:32:00</p></td>
+<td><p style="color:green">인천</p></td>
+<td><p style="color:green">21:38:00</p></td>
+<td><p style="color:green">+0:06:00</p></td>
+</tr>
+<tr>
+<th scope="row">50</th>
+<td><p style="color:green">소사</p></td>
+<td><p style="color:green">21:52:00</p></td>
+<td><p style="color:green">인천</p></td>
+<td><p style="color:green">21:57:00</p></td>
+<td><p style="color:green">+0:05:00</p></td>
+</tr>
+<tr>
+<th scope="row">51</th>
+<td><p style="color:black">소사</p></td>
+<td><p style="color:black">22:12:00</p></td>
+<td><p style="color:black">인천</p></td>
+<td><p style="color:black">22:19:30</p></td>
+<td><p style="color:black">+0:07:30</p></td>
+</tr>
+<tr>
+<th scope="row">52</th>
+<td><p style="color:red">소사</p></td>
+<td><p style="color:red">22:32:00</p></td>
+<td><p style="color:red">인천</p></td>
+<td><p style="color:red">22:48:30</p></td>
+<td><p style="color:red">+0:16:30</p></td>
+</tr>
+<tr>
+<th scope="row">53</th>
+<td><p style="color:green">소사</p></td>
+<td><p style="color:green">22:52:00</p></td>
+<td><p style="color:green">인천</p></td>
+<td><p style="color:green">22:59:00</p></td>
+<td><p style="color:green">+0:07:00</p></td>
+</tr>
+<tr>
+<th scope="row">54</th>
+<td><p style="color:black">소사</p></td>
+<td><p style="color:black">23:11:00</p></td>
+<td><p style="color:black">인천</p></td>
+<td><p style="color:black">23:18:30</p></td>
+<td><p style="color:black">+0:07:30</p></td>
+</tr>
+<tr>
+<th scope="row">55</th>
+<td><p style="color:red">소사</p></td>
+<td><p style="color:red">23:32:00</p></td>
+<td><p style="color:red">인천</p></td>
+<td><p style="color:red">23:47:00</p></td>
+<td><p style="color:red">+0:15:00</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</body>
+</html>

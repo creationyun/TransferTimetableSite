@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% load static %}
+				<!-- One -->
+
+				<section class="banner style1 orient-left content-align-left image-position-right fullscreen onload-image-fade-in onload-content-fade-right">
+					<div class="content">
+						<h1>시간대 선택</h1>
+						<h3>아래 3가지 중 하나를 선택하세요.</h3>
+						<br>
+						<ul class="actions">
+							<li><a href="weekday" class="button primary">평일</a></li>
+							<li><a href="saturday" class="button">토요일</a></li>
+							<li><a href="sunday_holiday" class="button">일요일/공휴일</a></li>
+						</ul>
+					</div>
+					<div class="image">
+						<img src="{% static 'images/calendar.jpg' %}" alt="" />
+					</div>
+				</section>
+{% endblock content %}

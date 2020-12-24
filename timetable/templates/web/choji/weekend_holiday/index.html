@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% load static %}
+		<script>
+		function _submit()
+		{
+			var arrival = document.getElementById('arrival').value;
+			var transfer = document.getElementById('transfer').value
+			if (arrival.substr(0,2) === transfer.substr(0,2)) {
+				alert('서로 다른 노선이어야 합니다.');
+				return;
+			}
+			
+			window.location.href = "choji-weekend_holiday-" + arrival + "-" + transfer + ".html";
+		}
+		</script>
+				<!-- One -->
+
+				<section class="wrapper style1 align-center">
+					<div class="inner index align-left">
+						<section>
+							<header>
+							<h3>방향 선택</h3>
+							</header>
+							<div class="content">
+								<form method="post" action="#">
+								<div class="fields">
+									<div class="field">
+										<label for="arrival">타고 온 열차</label>
+										<select name="arrival" id="arrival">
+											<option value="l4u" selected>4호선 당고개 방면 열차</option>
+											<option value="l4d">4호선 오이도 방면 열차</option>
+											<option value="shu">서해선 소사 방면 열차</option>
+											<option value="shd">서해선 원시 방면 열차</option>
+											<option value="sbu">수인분당선 왕십리 방면 열차</option>
+											<option value="sbd">수인분당선 인천 방면 열차</option>
+										</select>
+									</div>
+									<div class="field">
+										<label for="transfer">환승해서 탈 열차</label>
+										<select name="transfer" id="transfer">
+											<option value="l4u" selected>4호선 당고개 방면 열차</option>
+											<option value="l4d">4호선 오이도 방면 열차</option>
+											<option value="shu">서해선 소사 방면 열차</option>
+											<option value="shd">서해선 원시 방면 열차</option>
+											<option value="sbu">수인분당선 왕십리 방면 열차</option>
+											<option value="sbd">수인분당선 인천 방면 열차</option>
+										</select>
+									</div>
+								</div>
+								<ul class="actions">
+									<li><input type="button" name="button" id="button" onclick="_submit()" value="확인" /></li>
+								</ul>
+								</form>
+							</div>
+						</section>
+					</div>
+				</section>
+{% endblock content %}
