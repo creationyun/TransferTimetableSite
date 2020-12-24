@@ -24,8 +24,10 @@ def choji(request, workweek='', filename='index'):
 def sinnae(request, workweek='', filename='index'):
     if workweek == 'weekday':
         return render(request, f'web/sinnae/weekday/{filename}.html', {})
-    elif workweek == 'weekend_holiday':
-        return render(request, f'web/sinnae/weekend_holiday/{filename}.html', {})
+    elif workweek == 'saturday':
+        return render(request, f'web/sinnae/saturday/{filename}.html', {})
+    elif workweek == 'sunday_holiday':
+        return render(request, f'web/sinnae/sunday_holiday/{filename}.html', {})
     else:
         return render(request, 'web/sinnae/index.html', {})
 
