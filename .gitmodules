@@ -1,0 +1,3 @@
+[submodule "timetable/TransferTimetable"]
+	path = timetable/TransferTimetable
+	url = https://github.com/creationyun/TransferTimetable.git

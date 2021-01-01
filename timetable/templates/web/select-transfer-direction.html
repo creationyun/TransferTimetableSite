@@ -5,8 +5,8 @@
 				<script>
 				function _submit()
 				{
-					var station = document.getElementById('station').value;
-					var workweek = document.getElementById('workweek').value;
+					// var station = document.getElementById('station').value;
+					// var workweek = document.getElementById('workweek').value;
 					var arrival = document.getElementById('arrival').value;
 					var transfer = document.getElementById('transfer').value;
 					if (arrival.substr(0,2) === transfer.substr(0,2)) {
@@ -14,7 +14,7 @@
 						return;
 					}
 					
-					window.location.href = station + "-" + workweek + "-" + arrival + "-" + transfer + ".html";
+					window.location.href = arrival + "/" + transfer + "/";
 				}
 				</script>
 				<!-- One -->

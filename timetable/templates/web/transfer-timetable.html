@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% load static %}
+				<!-- One -->
+
+				<section class="wrapper style1 align-center">
+					<div class="inner index align-left">
+						<section>
+							<div class="content">
+								<h4>{{ before_info.week }}, {{ before_info.station }} {{ before_info.line }} {{ before_info.direction }}에서 {{ after_info.line }} {{ after_info.direction }}으로 환승할 때의 시간표</h4>
+								<div class="table-wrapper">
+									<table>
+										<thead>
+											<tr>
+												<th scope="col"></th>
+												<th scope="col" colspan="2">환승하기 전</th>
+												<th scope="col" colspan="2">환승한 후</th>
+												<th scope="col"></th>
+											</tr>
+											<tr>
+												<th scope="col">#</th>
+												<th scope="col">열차 행선지</th>
+												<th scope="col">도착시간</th>
+												<th scope="col">열차 행선지</th>
+												<th scope="col">도착시간</th>
+												<th scope="col">기다리는 시간</th>
+											</tr>
+										</thead>
+										<tbody>
+											{% for train in result %}
+											<tr>
+												<th scope="row">{{ forloop.counter }}</th>
+												<td><p style="color:{% if train.transfer_time_degree == "high" %}red{% elif train.transfer_time_degree == "middle" %}black{% else %}green{% endif %}">{{ train.before_transfer_train_bound }}</p></td>
+												<td><p style="color:{% if train.transfer_time_degree == "high" %}red{% elif train.transfer_time_degree == "middle" %}black{% else %}green{% endif %}">{{ train.before_transfer_train_time|date:'H:i:s' }}</p></td>
+												<td><p style="color:{% if train.transfer_time_degree == "high" %}red{% elif train.transfer_time_degree == "middle" %}black{% else %}green{% endif %}">{{ train.after_transfer_train_bound }}</p></td>
+												<td><p style="color:{% if train.transfer_time_degree == "high" %}red{% elif train.transfer_time_degree == "middle" %}black{% else %}green{% endif %}">{{ train.after_transfer_train_time|date:'H:i:s' }}</p></td>
+												<td><p style="color:{% if train.transfer_time_degree == "high" %}red{% elif train.transfer_time_degree == "middle" %}black{% else %}green{% endif %}">+{{ train.transfer_time_needed }}</p></td>
+											</tr>
+											{% endfor %}
+										</tbody>
+									</table>
+								</div>
+							</div>
+						</section>
+					</div>
+				</section>
+{% endblock content %}
