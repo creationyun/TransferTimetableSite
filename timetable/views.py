@@ -26,12 +26,12 @@ class Station(View):
     transfer_list = []
     workweek_list = workweek2_list
 
-    def get(self, request, workweek='', filename='index'):
+    def get(self, request, workweek=''):
         if workweek == '':
             return render(request, 'web/select-workweek.html', {
                 'workweek_list': self.workweek_list
             })
-        elif filename == 'index':
+        else:
             return render(request, 'web/select-transfer-direction.html', {
                 'station': self.station_name, 'workweek': workweek,
                 'arrival_list': self.arrival_list, 'transfer_list': self.transfer_list
@@ -131,7 +131,7 @@ class Sinnae(Station):
         {'code': 'gcu', 'selected': False, 'name': '경춘선 상봉/청량리 방면 열차'},
         {'code': 'gcd', 'selected': False, 'name': '경춘선 춘천 방면 열차'},
     ]
-    workweek_list = workweek3_list
+    workweek_list = workweek2_list
 
 
 class SinnaeTimetable(Timetable):
