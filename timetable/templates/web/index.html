@@ -2,6 +2,10 @@
 
 {% block content %}
 {% load static %}
+				{% if alert %}
+					<script>alert('{{ alert_msg }}'); window.location.href = '/timetable/';</script>
+				{% endif %}
+
 				<!-- One -->
 					<section class="banner style1 orient-left content-align-left image-position-right fullscreen onload-image-fade-in onload-content-fade-right">
 						<div class="content">
@@ -97,6 +101,38 @@
 						</div>
 						<div class="image">
 							<img src="{% static 'images/sosa.jpg' %}" alt="" />
+						</div>
+					</section>
+
+				<!-- Eight -->
+					<section class="wrapper style1 align-center">
+						<div class="inner">
+							<div class="index align-left">
+								<section>
+									<header>
+										<h3>원하시는</h3>
+										<h3>환승 시간표가</h3>
+										<h3>없으면</h3>
+										<h3>요청해주세요.</h3>
+									</header>
+									<div class="content">
+										<form method="post" action="report/">
+											{% csrf_token %}
+											<div class="fields">
+												<div class="field">
+													<label for="station">역 이름</label>
+													<input type="text" name="station" id="station" value>
+												</div>
+											</div>
+											<ul class="actions">
+												<li>
+													<input type="submit" name="report" id="report" value="제보하기">
+												</li>
+											</ul>
+										</form>
+									</div>
+								</section>
+							</div>
 						</div>
 					</section>
 

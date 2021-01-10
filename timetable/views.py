@@ -1,6 +1,7 @@
 from django.views import View
 from django.http import Http404
 from django.shortcuts import render
+from .models import RequestedStation
 from .TransferTimetable import transfer_timetable as tt
 from datetime import timedelta
 
@@ -17,7 +18,23 @@ workweek3_list = [
 
 
 def main(request):
-    return render(request, 'web/index.html', {})
+    return render(request, 'web/index.html', {'alert': False, 'alert_msg': ''})
+
+
+def report(request):
+    if request.method == 'POST':
+        station = request.POST['station']
+        if station == '':
+            return render(request, 'web/index.html', {'alert': True, 'alert_msg': '역명을 입력해주세요.'})
+        if len(station) > 50:
+            return render(request, 'web/index.html', {'alert': True, 'alert_msg': '역명은 50자 미만이어야 합니다.'})
+
+        # Create object
+        RequestedStation.objects.create(station_name=station)
+
+        return render(request, 'web/index.html', {'alert': True, 'alert_msg': '성공적으로 반영되었습니다.'})
+    else:
+        return Http404("Accessed without request.")
 
 
 class Station(View):
