@@ -5,8 +5,6 @@
 				<script>
 				function _submit()
 				{
-					// var station = document.getElementById('station').value;
-					// var workweek = document.getElementById('workweek').value;
 					var arrival = document.getElementById('arrival').value;
 					var transfer = document.getElementById('transfer').value;
 					if (arrival.substr(0,2) === transfer.substr(0,2)) {
@@ -19,40 +17,37 @@
 				</script>
 				<!-- One -->
 
-				<section class="wrapper style1 align-center">
-					<div class="inner index align-left">
-						<section>
-							<header>
-							<h3>방향 선택</h3>
-							</header>
-							<div class="content">
-								<form method="post" action="#">
-								<input type="hidden" id="station" name="station" value="{{ station }}">
-								<input type="hidden" id="workweek" name="workweek" value="{{ workweek }}">
-								<div class="fields">
-									<div class="field">
-										<label for="arrival">타고 온 열차</label>
-										<select name="arrival" id="arrival">
-											{% for train in arrival_list %}
-											<option value="{{ train.code }}" {% if train.selected %}selected{% endif %}>{{ train.name }}</option>
-											{% endfor %}
-										</select>
-									</div>
-									<div class="field">
-										<label for="transfer">환승해서 탈 열차</label>
-										<select name="transfer" id="transfer">
-											{% for train in transfer_list %}
-											<option value="{{ train.code }}" {% if train.selected %}selected{% endif %}>{{ train.name }}</option>
-											{% endfor %}
-										</select>
-									</div>
+				<section class="banner style1 orient-left content-align-left image-position-right fullscreen onload-image-fade-in onload-content-fade-right">
+					<div class="content">
+						<h3>방향 선택</h3>
+						<form method="post" action="#">
+							<input type="hidden" id="station" name="station" value="{{ station }}">
+							<input type="hidden" id="workweek" name="workweek" value="{{ workweek }}">
+							<div class="fields">
+								<div class="field">
+									<label for="arrival">타고 온 열차</label>
+									<select name="arrival" id="arrival">
+										{% for train in arrival_list %}
+										<option value="{{ train.code }}" {% if train.selected %}selected{% endif %}>{{ train.name }}</option>
+										{% endfor %}
+									</select>
 								</div>
-								<ul class="actions">
-									<li><input type="button" name="button" id="button" onclick="_submit()" value="확인" /></li>
-								</ul>
-								</form>
+								<div class="field">
+									<label for="transfer">환승해서 탈 열차</label>
+									<select name="transfer" id="transfer">
+										{% for train in transfer_list %}
+										<option value="{{ train.code }}" {% if train.selected %}selected{% endif %}>{{ train.name }}</option>
+										{% endfor %}
+									</select>
+								</div>
 							</div>
-						</section>
+							<ul class="actions">
+								<li><input type="button" name="button" id="button" onclick="_submit()" value="확인" /></li>
+							</ul>
+						</form>
+					</div>
+					<div class="image">
+						<img src="{% static map_image %}" alt="" />
 					</div>
 				</section>
 {% endblock content %}

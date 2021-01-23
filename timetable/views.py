@@ -42,6 +42,7 @@ class Station(View):
     arrival_list = []
     transfer_list = []
     workweek_list = workweek2_list
+    map_image_filename = ''
 
     def get(self, request, workweek=''):
         if workweek == '':
@@ -51,7 +52,8 @@ class Station(View):
         else:
             return render(request, 'web/select-transfer-direction.html', {
                 'station': self.station_name, 'workweek': workweek,
-                'arrival_list': self.arrival_list, 'transfer_list': self.transfer_list
+                'arrival_list': self.arrival_list, 'transfer_list': self.transfer_list,
+                'map_image': self.map_image_filename
             })
 
 
@@ -82,12 +84,18 @@ class Timetable(View):
 class Imae(Station):
     station_name = 'imae'
     arrival_list = [
-        {'code': 'sbu', 'selected': True, 'name': '수인분당선 왕십리 방면 열차'},
-        {'code': 'sbd', 'selected': False, 'name': '수인분당선 죽전/고색/인천 방면 열차'},
-        {'code': 'ggu', 'selected': False, 'name': '경강선 판교 방면 열차'},
-        {'code': 'ggd', 'selected': False, 'name': '경강선 여주 방면 열차'},
+        {'code': 'sbu', 'selected': True, 'name': '수인분당선 왕십리 방면 열차 (서현 → 이매)'},
+        {'code': 'sbd', 'selected': False, 'name': '수인분당선 죽전/고색/인천 방면 열차 (야탑 → 이매)'},
+        {'code': 'ggu', 'selected': False, 'name': '경강선 판교 방면 열차 (삼동 → 이매)'},
+        {'code': 'ggd', 'selected': False, 'name': '경강선 여주 방면 열차 (판교 → 이매)'},
     ]
-    transfer_list = arrival_list
+    transfer_list = [
+        {'code': 'sbu', 'selected': True, 'name': '수인분당선 왕십리 방면 열차 (이매 → 야탑)'},
+        {'code': 'sbd', 'selected': False, 'name': '수인분당선 죽전/고색/인천 방면 열차 (이매 → 서현)'},
+        {'code': 'ggu', 'selected': False, 'name': '경강선 판교 방면 열차 (이매 → 판교)'},
+        {'code': 'ggd', 'selected': False, 'name': '경강선 여주 방면 열차 (이매 → 삼동)'},
+    ]
+    map_image_filename = 'images/imae-map.jpg'
 
 
 class ImaeTimetable(Timetable):
@@ -106,14 +114,22 @@ class ImaeTimetable(Timetable):
 class Choji(Station):
     station_name = 'choji'
     arrival_list = [
-        {'code': 'l4u', 'selected': True, 'name': '4호선 당고개 방면 열차'},
-        {'code': 'l4d', 'selected': False, 'name': '4호선 오이도 방면 열차'},
-        {'code': 'shu', 'selected': False, 'name': '서해선 소사 방면 열차'},
-        {'code': 'shd', 'selected': False, 'name': '서해선 원시 방면 열차'},
-        {'code': 'sbu', 'selected': False, 'name': '수인분당선 왕십리 방면 열차'},
-        {'code': 'sbd', 'selected': False, 'name': '수인분당선 인천 방면 열차'},
+        {'code': 'l4u', 'selected': True, 'name': '4호선 당고개 방면 열차 (안산 → 초지)'},
+        {'code': 'l4d', 'selected': False, 'name': '4호선 오이도 방면 열차 (고잔 → 초지)'},
+        {'code': 'shu', 'selected': False, 'name': '서해선 소사 방면 열차 (시우(원곡) → 초지)'},
+        {'code': 'shd', 'selected': False, 'name': '서해선 원시 방면 열차 (선부 → 초지)'},
+        {'code': 'sbu', 'selected': False, 'name': '수인분당선 왕십리 방면 열차 (안산 → 초지)'},
+        {'code': 'sbd', 'selected': False, 'name': '수인분당선 인천 방면 열차 (고잔 → 초지)'},
     ]
-    transfer_list = arrival_list
+    transfer_list = [
+        {'code': 'l4u', 'selected': True, 'name': '4호선 당고개 방면 열차 (초지 → 고잔)'},
+        {'code': 'l4d', 'selected': False, 'name': '4호선 오이도 방면 열차 (초지 → 안산)'},
+        {'code': 'shu', 'selected': False, 'name': '서해선 소사 방면 열차 (초지 → 선부)'},
+        {'code': 'shd', 'selected': False, 'name': '서해선 원시 방면 열차 (초지 → 시우(원곡))'},
+        {'code': 'sbu', 'selected': False, 'name': '수인분당선 왕십리 방면 열차 (초지 → 고잔)'},
+        {'code': 'sbd', 'selected': False, 'name': '수인분당선 인천 방면 열차 (초지 → 안산)'},
+    ]
+    map_image_filename = 'images/choji-map.jpg'
 
 
 class ChojiTimetable(Timetable):
@@ -139,16 +155,17 @@ class ChojiTimetable(Timetable):
 class Sinnae(Station):
     station_name = 'sinnae'
     arrival_list = [
-        {'code': 'l6d', 'selected': True, 'name': '6호선 신내 종착 열차'},
-        {'code': 'gcu', 'selected': False, 'name': '경춘선 상봉/청량리 방면 열차'},
-        {'code': 'gcd', 'selected': False, 'name': '경춘선 춘천 방면 열차'},
+        {'code': 'l6d', 'selected': True, 'name': '6호선 신내 종착 열차 (봉화산 → 신내)'},
+        {'code': 'gcu', 'selected': False, 'name': '경춘선 상봉/청량리 방면 열차 (갈매 → 신내)'},
+        {'code': 'gcd', 'selected': False, 'name': '경춘선 춘천 방면 열차 (망우 → 신내)'},
     ]
     transfer_list = [
-        {'code': 'l6u', 'selected': True, 'name': '6호선 응암순환 방면 열차'},
-        {'code': 'gcu', 'selected': False, 'name': '경춘선 상봉/청량리 방면 열차'},
-        {'code': 'gcd', 'selected': False, 'name': '경춘선 춘천 방면 열차'},
+        {'code': 'l6u', 'selected': True, 'name': '6호선 응암순환 방면 열차 (신내 → 봉화산)'},
+        {'code': 'gcu', 'selected': False, 'name': '경춘선 상봉/청량리 방면 열차 (신내 → 망우)'},
+        {'code': 'gcd', 'selected': False, 'name': '경춘선 춘천 방면 열차 (신내 → 갈매)'},
     ]
     workweek_list = workweek2_list
+    map_image_filename = 'images/sinnae-map.jpg'
 
 
 class SinnaeTimetable(Timetable):
@@ -167,12 +184,18 @@ class SinnaeTimetable(Timetable):
 class Daegok(Station):
     station_name = 'daegok'
     arrival_list = [
-        {'code': 'l3u', 'selected': True, 'name': '3호선 대화 방면 열차'},
-        {'code': 'l3d', 'selected': False, 'name': '3호선 오금 방면 열차'},
-        {'code': 'gju', 'selected': False, 'name': '경의중앙선 서울역/용문 방면 열차'},
-        {'code': 'gjd', 'selected': False, 'name': '경의중앙선 문산 방면 열차'},
+        {'code': 'l3u', 'selected': True, 'name': '3호선 대화 방면 열차 (화정 → 대곡)'},
+        {'code': 'l3d', 'selected': False, 'name': '3호선 오금 방면 열차 (백석 → 대곡)'},
+        {'code': 'gju', 'selected': False, 'name': '경의중앙선 서울역/용문 방면 열차 (곡산 → 대곡)'},
+        {'code': 'gjd', 'selected': False, 'name': '경의중앙선 문산 방면 열차 (능곡 → 대곡)'},
     ]
-    transfer_list = arrival_list
+    transfer_list = [
+        {'code': 'l3u', 'selected': True, 'name': '3호선 대화 방면 열차 (대곡 → 백석)'},
+        {'code': 'l3d', 'selected': False, 'name': '3호선 오금 방면 열차 (대곡 → 화정)'},
+        {'code': 'gju', 'selected': False, 'name': '경의중앙선 서울역/용문 방면 열차 (대곡 → 능곡)'},
+        {'code': 'gjd', 'selected': False, 'name': '경의중앙선 문산 방면 열차 (대곡 → 곡산)'},
+    ]
+    map_image_filename = 'images/daegok-map.jpg'
 
 
 class DaegokTimetable(Timetable):
@@ -191,14 +214,22 @@ class DaegokTimetable(Timetable):
 class OlympicPark(Station):
     station_name = 'olympic_park'
     arrival_list = [
-        {'code': 'l5u', 'selected': True, 'name': '5호선 방화 방면 열차'},
-        {'code': 'l5d', 'selected': False, 'name': '5호선 마천 방면 열차'},
-        {'code': 'l9au', 'selected': False, 'name': '9호선 중앙보훈병원 방면 일반열차'},
-        {'code': 'l9ad', 'selected': False, 'name': '9호선 개화 방면 일반열차'},
-        {'code': 'l9eu', 'selected': False, 'name': '9호선 중앙보훈병원 방면 급행열차'},
-        {'code': 'l9ed', 'selected': False, 'name': '9호선 김포공항 방면 급행열차'},
+        {'code': 'l5u', 'selected': True, 'name': '5호선 방화 방면 열차 (방이 → 올림픽공원)'},
+        {'code': 'l5d', 'selected': False, 'name': '5호선 마천 방면 열차 (둔촌동 → 올림픽공원)'},
+        {'code': 'l9au', 'selected': False, 'name': '9호선 중앙보훈병원 방면 일반열차 (한성백제 → 올림픽공원)'},
+        {'code': 'l9ad', 'selected': False, 'name': '9호선 개화 방면 일반열차 (둔촌오륜 → 올림픽공원)'},
+        {'code': 'l9eu', 'selected': False, 'name': '9호선 중앙보훈병원 방면 급행열차 (석촌 → 올림픽공원)'},
+        {'code': 'l9ed', 'selected': False, 'name': '9호선 김포공항 방면 급행열차 (중앙보훈병원 → 올림픽공원)'},
     ]
-    transfer_list = arrival_list
+    transfer_list = [
+        {'code': 'l5u', 'selected': True, 'name': '5호선 방화 방면 열차 (올림픽공원 → 둔촌동)'},
+        {'code': 'l5d', 'selected': False, 'name': '5호선 마천 방면 열차 (올림픽공원 → 방이)'},
+        {'code': 'l9au', 'selected': False, 'name': '9호선 중앙보훈병원 방면 일반열차 (올림픽공원 → 둔촌오륜)'},
+        {'code': 'l9ad', 'selected': False, 'name': '9호선 개화 방면 일반열차 (올림픽공원 → 한성백제)'},
+        {'code': 'l9eu', 'selected': False, 'name': '9호선 중앙보훈병원 방면 급행열차 (올림픽공원 → 중앙보훈병원)'},
+        {'code': 'l9ed', 'selected': False, 'name': '9호선 김포공항 방면 급행열차 (올림픽공원 → 석촌)'},
+    ]
+    map_image_filename = 'images/olympic_park-map.jpg'
 
 
 class OlympicParkTimetable(Timetable):
@@ -219,15 +250,16 @@ class OlympicParkTimetable(Timetable):
 class Sosa(Station):
     station_name = 'sosa'
     arrival_list = [
-        {'code': 'shu', 'selected': True, 'name': '서해선 소사 종착 열차'},
-        {'code': 'l1u', 'selected': False, 'name': '1호선 소요산 방면 열차'},
-        {'code': 'l1d', 'selected': False, 'name': '1호선 인천 방면 열차'},
+        {'code': 'shu', 'selected': True, 'name': '서해선 소사 종착 열차 (소새울 → 소사)'},
+        {'code': 'l1u', 'selected': False, 'name': '1호선 소요산 방면 열차 (부천 → 소사)'},
+        {'code': 'l1d', 'selected': False, 'name': '1호선 인천 방면 열차 (역곡 → 소사)'},
     ]
     transfer_list = [
-        {'code': 'shd', 'selected': True, 'name': '서해선 원시 방면 열차'},
-        {'code': 'l1u', 'selected': False, 'name': '1호선 소요산 방면 열차'},
-        {'code': 'l1d', 'selected': False, 'name': '1호선 인천 방면 열차'},
+        {'code': 'shd', 'selected': True, 'name': '서해선 원시 방면 열차 (소사 → 소새울)'},
+        {'code': 'l1u', 'selected': False, 'name': '1호선 소요산 방면 열차 (소사 → 역곡)'},
+        {'code': 'l1d', 'selected': False, 'name': '1호선 인천 방면 열차 (소사 → 부천)'},
     ]
+    map_image_filename = 'images/sosa-map.jpg'
 
 
 class SosaTimetable(Timetable):
