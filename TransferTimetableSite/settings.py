@@ -25,7 +25,7 @@ secrets = json.load(open(os.path.join(BASE_DIR, 'secrets.json')))
 SECRET_KEY = secrets['SECRET_KEY']
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = [
     'localhost',
@@ -123,10 +123,10 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
-STATIC_ROOT = 'static'
+#STATIC_ROOT = 'static'
 STATIC_URL = '/timetable/static/'
-"""
+#"""
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static"),
 ]
-"""
+#"""
