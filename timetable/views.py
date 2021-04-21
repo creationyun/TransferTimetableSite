@@ -274,3 +274,41 @@ class SosaTimetable(Timetable):
     def walk_time_rule(self, arrival_code, transfer_code):
         return timedelta(minutes=4)
 
+
+class Hoegi(Station):
+    station_name = 'hoegi'
+    arrival_list = [
+        {'code': 'l1u', 'selected': False, 'name': '1호선 소요산 방면 열차 (청량리 → 회기)'},
+        {'code': 'l1d', 'selected': False, 'name': '1호선 인천/신창 방면 열차 (외대앞 → 회기)'},
+        {'code': 'gju', 'selected': False, 'name': '경의중앙선 문산 방면 열차 (중랑 → 회기)'},
+        {'code': 'gjd', 'selected': False, 'name': '경의중앙선 용문 방면 열차 (청량리 → 회기)'},
+        {'code': 'gcu', 'selected': False, 'name': '경춘선 청량리 방면 열차 (중랑 → 회기)'},
+        {'code': 'gcd', 'selected': False, 'name': '경춘선 춘천 방면 열차 (청량리 → 회기)'},
+    ]
+    transfer_list = [
+        {'code': 'l1u', 'selected': False, 'name': '1호선 소요산 방면 열차 (회기 → 외대앞)'},
+        {'code': 'l1d', 'selected': False, 'name': '1호선 인천/신창 방면 열차 (회기 → 청량리)'},
+        {'code': 'gju', 'selected': False, 'name': '경의중앙선 문산 방면 열차 (회기 → 청량리)'},
+        {'code': 'gjd', 'selected': False, 'name': '경의중앙선 용문 방면 열차 (회기 → 중랑)'},
+        {'code': 'gcu', 'selected': False, 'name': '경춘선 청량리 방면 열차 (회기 → 청량리)'},
+        {'code': 'gcd', 'selected': False, 'name': '경춘선 춘천 방면 열차 (회기 → 중랑)'},
+    ]
+    map_image_filename = 'images/hoegi-map.jpg'
+
+
+class HoegiTimetable(Timetable):
+    station_name = 'hoegi'
+    code_to_timetable = {
+        'l1u': '1_soyosan.txt',
+        'l1d': '1_incheon_sinchang.txt',
+        'gju': 'gyeonguijungang_munsan.txt',
+        'gjd': 'gyeonguijungang_yongmun.txt',
+        'gcu': 'gyeongchun_cheongnyangni.txt',
+        'gcd': 'gyeongchun_chuncheon.txt'
+    }
+
+    def walk_time_rule(self, arrival_code, transfer_code):
+        if arrival_code[:2] == 'l1' or transfer_code[:2] == 'l1':
+            return timedelta(minutes=2)
+        else:
+            return timedelta(minutes=0)
