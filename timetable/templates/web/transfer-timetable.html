@@ -3,13 +3,48 @@
 {% block content %}
 {% load static %}
 				<!-- One -->
+				<section class="wrapper style1 align-center">
+					<div class="inner medium">
+						<h4>{{ before_info.week }}에 {{ before_info.line }} {{ before_info.direction }} 열차를 타고,<br/>
+						{{ before_info.station }}에서 {{ after_info.line }} {{ after_info.direction }}으로 환승할 때의 시간표입니다.</h4>
+						<br/>
+						<h3>옵션</h3>
+						<form method="post" action=".">
+							{% csrf_token %}
+							<div class="fields">
+								<div class="field">
+									<p>타고 온 열차의 행선지</p>
+									{% for elem in before_bound_for_list %}
+									<input type="checkbox" id="before_{{ elem }}" name="before[]"
+										   value="{{ elem }}"
+										   {% if elem in before_bound_for_selected %}checked{% endif %}>
+									<label for="before_{{ elem }}">{{ elem }}</label>
+									{% endfor %}
+								</div>
+								<br/>
+								<div class="field">
+									<p>탈 열차의 행선지</p>
+									{% for elem in after_bound_for_list %}
+									<input type="checkbox" id="after_{{ elem }}" name="after[]" value="{{ elem }}"
+										   {% if elem in after_bound_for_selected %}checked{% endif %}>
+									<label for="after_{{ elem }}">{{ elem }}</label>
+									{% endfor %}
+								</div>
+							</div>
+							<ul class="actions special">
+								<li>
+									<input type="submit" name="apply" id="apply" value="적용">
+								</li>
+							</ul>
+						</form>
+					</div>
+				</section>
 
+				<!-- Two -->
 				<section class="wrapper style1 align-center">
 					<div class="inner index align-left">
 						<section>
 							<div class="content">
-								<h4>{{ before_info.week }}에 {{ before_info.line }} {{ before_info.direction }} 열차를 타고,<br/>
-								{{ before_info.station }}에서 {{ after_info.line }} {{ after_info.direction }}으로 환승할 때의 시간표입니다.</h4>
 								<div class="table-wrapper">
 									<table>
 										<thead>
@@ -32,11 +67,11 @@
 											{% for train in result %}
 											<tr>
 												<th scope="row">{{ forloop.counter }}</th>
-												<td><p style="color:{% if train.transfer_time_degree == "high" %}red{% elif train.transfer_time_degree == "middle" %}black{% else %}green{% endif %}">{{ train.before_transfer_train_bound }}</p></td>
-												<td><p style="color:{% if train.transfer_time_degree == "high" %}red{% elif train.transfer_time_degree == "middle" %}black{% else %}green{% endif %}">{{ train.before_transfer_train_time|date:'H:i:s' }}</p></td>
-												<td><p style="color:{% if train.transfer_time_degree == "high" %}red{% elif train.transfer_time_degree == "middle" %}black{% else %}green{% endif %}">{{ train.after_transfer_train_bound }}</p></td>
-												<td><p style="color:{% if train.transfer_time_degree == "high" %}red{% elif train.transfer_time_degree == "middle" %}black{% else %}green{% endif %}">{{ train.after_transfer_train_time|date:'H:i:s' }}</p></td>
-												<td><p style="color:{% if train.transfer_time_degree == "high" %}red{% elif train.transfer_time_degree == "middle" %}black{% else %}green{% endif %}">+{{ train.transfer_time_needed }}</p></td>
+												<td><p style='color:{% if train.transfer_time_degree == "high" %}red{% elif train.transfer_time_degree == "middle" %}black{% else %}green{% endif %}'>{{ train.before_transfer_train_bound }}</p></td>
+												<td><p style='color:{% if train.transfer_time_degree == "high" %}red{% elif train.transfer_time_degree == "middle" %}black{% else %}green{% endif %}'>{{ train.before_transfer_train_time|date:'H:i:s' }}</p></td>
+												<td><p style='color:{% if train.transfer_time_degree == "high" %}red{% elif train.transfer_time_degree == "middle" %}black{% else %}green{% endif %}'>{{ train.after_transfer_train_bound }}</p></td>
+												<td><p style='color:{% if train.transfer_time_degree == "high" %}red{% elif train.transfer_time_degree == "middle" %}black{% else %}green{% endif %}'>{{ train.after_transfer_train_time|date:'H:i:s' }}</p></td>
+												<td><p style='color:{% if train.transfer_time_degree == "high" %}red{% elif train.transfer_time_degree == "middle" %}black{% else %}green{% endif %}'>+{{ train.transfer_time_needed }}</p></td>
 											</tr>
 											{% endfor %}
 										</tbody>

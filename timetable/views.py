@@ -60,17 +60,48 @@ class Station(View):
 class Timetable(View):
     station_name = None
     code_to_timetable = {}
+    before_bound_for_dict = {}
+    after_bound_for_dict = {}
 
     def walk_time_rule(self, arrival_code, transfer_code):
         return timedelta(minutes=0)
 
+    def set_bound_for_dict(self, workweek, arrival_code, transfer_code):
+        # Read 'before' timetable
+        before, before_info = tt.read_timetable(
+            f'timetable/TransferTimetable/{self.station_name}/{workweek}/{self.code_to_timetable[arrival_code]}')
+
+        self.before_bound_for_dict = {}
+
+        for elem in before:
+            if elem['bound_for'] in self.before_bound_for_dict:
+                self.before_bound_for_dict[elem['bound_for']] += 1
+            else:
+                self.before_bound_for_dict[elem['bound_for']] = 1
+
+        # Read 'after' timetable
+        after, after_info = tt.read_timetable(
+            f'timetable/TransferTimetable/{self.station_name}/{workweek}/{self.code_to_timetable[transfer_code]}',
+            allow_terminal=False)
+
+        self.after_bound_for_dict = {}
+
+        for elem in after:
+            if elem['bound_for'] in self.after_bound_for_dict:
+                self.after_bound_for_dict[elem['bound_for']] += 1
+            else:
+                self.after_bound_for_dict[elem['bound_for']] = 1
+
+        return before, before_info, after, after_info
+
     def get(self, request, workweek, arrival_code, transfer_code):
         try:
-            before, before_info = tt.read_timetable(
-                f'timetable/TransferTimetable/{self.station_name}/{workweek}/{self.code_to_timetable[arrival_code]}')
-            after, after_info = tt.read_timetable(
-                f'timetable/TransferTimetable/{self.station_name}/{workweek}/{self.code_to_timetable[transfer_code]}',
-                allow_terminal=False)
+            before, before_info, after, after_info = self.set_bound_for_dict(workweek, arrival_code, transfer_code)
+
+            before_bound_for_list = [x[0] for x in sorted(self.before_bound_for_dict.items(),
+                                                          key=lambda item: -item[1])]
+            after_bound_for_list = [x[0] for x in sorted(self.after_bound_for_dict.items(),
+                                                         key=lambda item: -item[1])]
             walk_time = self.walk_time_rule(arrival_code, transfer_code)
         except (KeyError, FileNotFoundError, IndexError):
             raise Http404("Workweek or arrival/transfer code is not valid.")
@@ -78,7 +109,47 @@ class Timetable(View):
         result = tt.derive_transfer_timetable(before, after, walk_time)
 
         return render(request, f'web/transfer-timetable.html',
-                      {'before_info': before_info, 'after_info': after_info, 'result': result, 'walk_time': walk_time})
+                      {'before_info': before_info, 'after_info': after_info, 'result': result, 'walk_time': walk_time,
+                       'before_bound_for_list': before_bound_for_list, 'after_bound_for_list': after_bound_for_list,
+                       'before_bound_for_selected': before_bound_for_list,
+                       'after_bound_for_selected': after_bound_for_list
+                       })
+
+    def post(self, request, workweek, arrival_code, transfer_code):
+        try:
+            self.set_bound_for_dict(workweek, arrival_code, transfer_code)
+
+            # Before Transfer
+            before_bound_for_selected = request.POST.getlist('before[]')
+            before_bound_for_list = [x[0] for x in sorted(self.before_bound_for_dict.items(),
+                                                          key=lambda item: -item[1])]
+
+            before, before_info = tt.read_timetable(
+                f'timetable/TransferTimetable/{self.station_name}/{workweek}/{self.code_to_timetable[arrival_code]}',
+                exclude_bound_for=[x for x in before_bound_for_list if x not in before_bound_for_selected])
+
+            # After Transfer
+            after_bound_for_selected = set(request.POST.getlist('after[]'))
+            after_bound_for_list = [x[0] for x in sorted(self.after_bound_for_dict.items(),
+                                                         key=lambda item: -item[1])]
+
+            after, after_info = tt.read_timetable(
+                f'timetable/TransferTimetable/{self.station_name}/{workweek}/{self.code_to_timetable[transfer_code]}',
+                allow_terminal=False,
+                exclude_bound_for=[x for x in after_bound_for_list if x not in after_bound_for_selected]
+            )
+
+            walk_time = self.walk_time_rule(arrival_code, transfer_code)
+        except (KeyError, FileNotFoundError, IndexError):
+            raise Http404("Workweek or arrival/transfer code is not valid.")
+
+        result = tt.derive_transfer_timetable(before, after, walk_time)
+
+        return render(request, f'web/transfer-timetable.html',
+                      {'before_info': before_info, 'after_info': after_info, 'result': result, 'walk_time': walk_time,
+                       'before_bound_for_list': before_bound_for_list, 'after_bound_for_list': after_bound_for_list,
+                       'before_bound_for_selected': before_bound_for_selected,
+                       'after_bound_for_selected': after_bound_for_selected})
 
 
 class Imae(Station):
@@ -244,7 +315,7 @@ class OlympicParkTimetable(Timetable):
     }
 
     def walk_time_rule(self, arrival_code, transfer_code):
-        return timedelta(minutes=2)
+        return timedelta(minutes=3)
 
 
 class Sosa(Station):

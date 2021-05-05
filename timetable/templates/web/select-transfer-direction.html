@@ -25,7 +25,7 @@
 							<input type="hidden" id="workweek" name="workweek" value="{{ workweek }}">
 							<div class="fields">
 								<div class="field">
-									<label for="arrival">타고 온 열차</label>
+									<label for="arrival">타고 온 열차 선택</label>
 									<select name="arrival" id="arrival">
 										{% for train in arrival_list %}
 										<option value="{{ train.code }}" {% if train.selected %}selected{% endif %}>{{ train.name }}</option>
@@ -33,7 +33,7 @@
 									</select>
 								</div>
 								<div class="field">
-									<label for="transfer">환승해서 탈 열차</label>
+									<label for="transfer">환승해서 탈 열차 선택</label>
 									<select name="transfer" id="transfer">
 										{% for train in transfer_list %}
 										<option value="{{ train.code }}" {% if train.selected %}selected{% endif %}>{{ train.name }}</option>
