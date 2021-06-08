@@ -383,3 +383,33 @@ class HoegiTimetable(Timetable):
             return timedelta(minutes=2)
         else:
             return timedelta(minutes=0)
+
+
+class Mangu(Station):
+    station_name = 'mangu'
+    arrival_list = [
+        {'code': 'gju', 'selected': False, 'name': '경의중앙선 문산 방면 열차 (양원 → 망우)'},
+        {'code': 'gjd', 'selected': False, 'name': '경의중앙선 용문 방면 열차 (상봉 → 망우)'},
+        {'code': 'gcu', 'selected': False, 'name': '경춘선 청량리 방면 열차 (신내 → 망우)'},
+        {'code': 'gcd', 'selected': False, 'name': '경춘선 춘천 방면 열차 (상봉 → 망우)'},
+    ]
+    transfer_list = [
+        {'code': 'gju', 'selected': False, 'name': '경의중앙선 문산 방면 열차 (망우 → 상봉)'},
+        {'code': 'gjd', 'selected': False, 'name': '경의중앙선 용문 방면 열차 (망우 → 양원)'},
+        {'code': 'gcu', 'selected': False, 'name': '경춘선 청량리 방면 열차 (망우 → 상봉)'},
+        {'code': 'gcd', 'selected': False, 'name': '경춘선 춘천 방면 열차 (망우 → 신내)'},
+    ]
+    map_image_filename = 'images/mangu-map.jpg'
+
+
+class ManguTimetable(Timetable):
+    station_name = 'mangu'
+    code_to_timetable = {
+        'gju': 'gyeonguijungang_munsan.txt',
+        'gjd': 'gyeonguijungang_yongmun.txt',
+        'gcu': 'gyeongchun_cheongnyangni.txt',
+        'gcd': 'gyeongchun_chuncheon.txt'
+    }
+
+    def walk_time_rule(self, arrival_code, transfer_code):
+        return timedelta(minutes=4)

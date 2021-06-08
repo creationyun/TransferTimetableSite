@@ -12,6 +12,7 @@ urlpatterns = [
     path('olympic_park/', views.OlympicPark.as_view(), name='olympic_park'),
     path('sosa/', views.Sosa.as_view(), name='sosa'),
     path('hoegi/', views.Hoegi.as_view(), name='hoegi'),
+    path('mangu/', views.Mangu.as_view(), name='mangu'),
 
     path('imae/<slug:workweek>/', views.Imae.as_view(), name='imae-workweek'),
     path('choji/<slug:workweek>/', views.Choji.as_view(), name='choji-workweek'),
@@ -20,6 +21,7 @@ urlpatterns = [
     path('olympic_park/<slug:workweek>/', views.OlympicPark.as_view(), name='olympic_park-workweek'),
     path('sosa/<slug:workweek>/', views.Sosa.as_view(), name='sosa-workweek'),
     path('hoegi/<slug:workweek>/', views.Hoegi.as_view(), name='hoegi-workweek'),
+    path('mangu/<slug:workweek>/', views.Mangu.as_view(), name='mangu-workweek'),
 
     path('imae/<slug:workweek>/<slug:arrival_code>/<slug:transfer_code>/', views.ImaeTimetable.as_view(),
          name='imae-workweek-timetable'),
@@ -35,4 +37,6 @@ urlpatterns = [
          name='sosa-workweek-timetable'),
     path('hoegi/<slug:workweek>/<slug:arrival_code>/<slug:transfer_code>/', views.HoegiTimetable.as_view(),
          name='hoegi-workweek-timetable'),
+    path('mangu/<slug:workweek>/<slug:arrival_code>/<slug:transfer_code>/', views.ManguTimetable.as_view(),
+         name='mangu-workweek-timetable'),
 ]
