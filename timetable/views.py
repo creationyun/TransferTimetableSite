@@ -413,3 +413,37 @@ class ManguTimetable(Timetable):
 
     def walk_time_rule(self, arrival_code, transfer_code):
         return timedelta(minutes=4)
+
+
+class Onsu(Station):
+    station_name = 'onsu'
+    arrival_list = [
+        {'code': 'l1u', 'selected': True, 'name': '1호선 소요산 방면 열차 (역곡 → 온수)'},
+        {'code': 'l1d', 'selected': False, 'name': '1호선 인천 방면 열차 (오류동 → 온수)'},
+        {'code': 'l7u', 'selected': False, 'name': '7호선 장암/도봉산 방면 열차 (까치울 → 온수)'},
+        {'code': 'l7d', 'selected': False, 'name': '7호선 석남 방면 열차 (천왕 → 온수)'},
+    ]
+    transfer_list = [
+        {'code': 'l1u', 'selected': False, 'name': '1호선 소요산 방면 열차 (온수 → 오류동)'},
+        {'code': 'l1d', 'selected': False, 'name': '1호선 인천 방면 열차 (온수 → 역곡)'},
+        {'code': 'l7u', 'selected': True, 'name': '7호선 장암/도봉산 방면 열차 (온수 → 천왕)'},
+        {'code': 'l7d', 'selected': False, 'name': '7호선 석남 방면 열차 (온수 → 까치울)'},
+    ]
+    map_image_filename = 'images/onsu-map.jpg'
+
+
+class OnsuTimetable(Timetable):
+    station_name = 'onsu'
+    code_to_timetable = {
+        'l1u': '1_soyosan.txt',
+        'l1d': '1_incheon.txt',
+        'l7u': '7_jangam.txt',
+        'l7d': '7_seongnam.txt'
+    }
+
+    def walk_time_rule(self, arrival_code, transfer_code):
+        if arrival_code[2] == 'd' and transfer_code[2] == 'd':
+            return timedelta(minutes=3)
+        else:
+            return timedelta(minutes=2)
+

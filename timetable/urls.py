@@ -13,6 +13,7 @@ urlpatterns = [
     path('sosa/', views.Sosa.as_view(), name='sosa'),
     path('hoegi/', views.Hoegi.as_view(), name='hoegi'),
     path('mangu/', views.Mangu.as_view(), name='mangu'),
+    path('onsu/', views.Onsu.as_view(), name='onsu'),
 
     path('imae/<slug:workweek>/', views.Imae.as_view(), name='imae-workweek'),
     path('choji/<slug:workweek>/', views.Choji.as_view(), name='choji-workweek'),
@@ -22,6 +23,7 @@ urlpatterns = [
     path('sosa/<slug:workweek>/', views.Sosa.as_view(), name='sosa-workweek'),
     path('hoegi/<slug:workweek>/', views.Hoegi.as_view(), name='hoegi-workweek'),
     path('mangu/<slug:workweek>/', views.Mangu.as_view(), name='mangu-workweek'),
+    path('onsu/<slug:workweek>/', views.Onsu.as_view(), name='onsu-workweek'),
 
     path('imae/<slug:workweek>/<slug:arrival_code>/<slug:transfer_code>/', views.ImaeTimetable.as_view(),
          name='imae-workweek-timetable'),
@@ -39,4 +41,6 @@ urlpatterns = [
          name='hoegi-workweek-timetable'),
     path('mangu/<slug:workweek>/<slug:arrival_code>/<slug:transfer_code>/', views.ManguTimetable.as_view(),
          name='mangu-workweek-timetable'),
+    path('onsu/<slug:workweek>/<slug:arrival_code>/<slug:transfer_code>/', views.OnsuTimetable.as_view(),
+         name='onsu-workweek-timetable'),
 ]
